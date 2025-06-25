@@ -1,7 +1,7 @@
 import numpy
 import torch
 import transformers
-from typing import Optional
+from typing import Optional, Literal, Sequence
 from nnsight import LanguageModel
 from dataclasses import dataclass
 from dataclasses_json import DataClassJsonMixin
@@ -31,6 +31,12 @@ Tokenizer = transformers.PreTrainedTokenizerFast
 # that provides utility methods for mapping between word/character positions and token indices,
 # with automatic tensor conversion support.
 TokenizerOutput = transformers.tokenization_utils_base.BatchEncoding
+
+Layer = int | Literal["emb"] | Literal["ln_f"]
+
+# All strings are also Sequence[str], so we have to distinguish that we
+# mean lists or tuples of strings, or sets of strings, not other strings
+StrSequence = list[str] | tuple[str, ...]
 
 @dataclass(frozen=False)
 class PredictedToken(DataClassJsonMixin):

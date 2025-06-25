@@ -1,0 +1,22 @@
+# Baukit
+## pip install git+https://github.com/davidbau/baukit.git
+
+# Core ML/Infra
+torch
+transformers
+accelerate
+nnsight
+bitsandbytes
+
+# LLM APIs
+openai
+anthropic
+
+# Utilities
+numpy
+PyYAML
+tqdm
+dataclasses-json
+matplotlib
+nltk
+wandb

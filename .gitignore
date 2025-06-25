@@ -32,6 +32,8 @@ Thumbs.db
 .venv
 env/
 venv/
+env.yml
 
 # Data files (optional - uncomment if you don't want to track data)
 # data_save/
+data/LLM_CACHE/

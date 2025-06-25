@@ -1,17 +1,57 @@
+import string
 import gc
 import torch
 from dataclasses import dataclass
-from typing import Union, Optional
+from typing import Union, Optional, Literal
 from src.models import ModelandTokenizer, unwrap_tokenizer
 from src.tokens import prepare_input
 from src.utils.printer import printer
 from src.utils.typing import (
     ArrayLike, Tokenizer, TokenizerOutput, PredictedToken
 )
+from nltk.corpus import stopwords
 
 def free_gpu_cache():
     gc.collect()
     torch.cuda.empty_cache()
+
+def get_keywords_from_text(
+    text: str,
+    tokenizer: Tokenizer | ModelandTokenizer,
+    maybe_prepend_space: bool = True,
+) -> list[int]:
+    tokenizer = unwrap_tokenizer(tokenizer)
+    if maybe_prepend_space is True and text.startswith(" ") is False:
+        text = f" {text}"
+    tokenized = tokenizer(text, add_special_tokens=False).input_ids
+    # print([tokenizer.decode(t) for t in tokenized])
+    filtered = []
+    prev_tok = " "
+    for idx, t_idx in enumerate(tokenized):
+        tok = tokenizer.decode(t_idx)
+        skip = False
+        if t_idx in tokenizer.all_special_ids:
+            skip = True
+        if tok in string.whitespace:
+            skip = True
+        if tok.strip() in string.punctuation:
+            skip = True
+        if tok.strip().lower() in stopwords.words("english"):
+            # print(tokenizer.decode(tokenized[idx + 1]))
+            if idx < len(tokenized) - 1 and tokenizer.decode(
+                tokenized[idx + 1]
+            ).startswith(" "):
+                skip = True
+        if (
+            prev_tok.endswith(" ") is False and tok.startswith(" ") is False
+        ):  # continuation of a word, safe to ignore?
+            skip = True
+
+        if skip is False:
+            filtered.append(t_idx)
+
+        prev_tok = tok
+    return filtered
 
 # dataclass: Automatic special method creation
 # frozen=False: The object is mutable -- can change field values after creation
@@ -179,3 +219,75 @@ def predict_next_token(
     # TODO: Add toke of interest logic
 
     return predictions
+
+def get_module_nnsight(model, layer_name):
+    layer = model
+    for name in layer_name.split("."):
+        layer = layer[int(name)] if name.isdigit() else getattr(layer, name)
+    return layer
+
+def generate_with_patch(
+    mt: ModelandTokenizer,
+    inputs: str | TokenizerOutput,
+    n_gen_per_prompt: int = 5,
+    max_new_tokens: int = 20,
+    patches: Optional[list[PatchSpec]] = None,
+    do_sample: bool = True,
+    patch_strategy: Literal["replace", "add"] = "replace",
+    patch_at_all_generations: bool = False,
+    remove_prefix: bool = False,
+    **kwargs,
+) -> list[str]:
+    if isinstance(inputs, TokenizerOutput):
+        if "offset_mapping" in inputs:
+            inputs.pop("offset_mapping")
+    else:
+        inputs = prepare_input(
+            prompts=[inputs],
+            tokenizer=mt,
+            n_gen_per_prompt=n_gen_per_prompt,
+        )
+
+    with mt.generate(
+        inputs,
+        max_new_tokens=max_new_tokens,
+        do_sample=do_sample,
+        output_scores=True,
+        return_dict_in_generate=True,
+        **kwargs,
+    ) as gen_trace:
+        if patches is not None:
+            if patch_at_all_generations:
+                mt.all()
+            for cur_patch in patches:
+                module_name, index = cur_patch.location
+                module = get_module_nnsight(mt, module_name)
+                current_state = (
+                    module.output.save()
+                    if ("mlp" in module_name or module_name == mt.embedder_name)
+                    else module.output[0].save()
+                )
+                if patch_strategy == "replace":
+                    current_state[:, index, :] = cur_patch.patch
+                elif patch_strategy == "add":
+                    current_state[:, index, :] += cur_patch.patch
+                else:
+                    raise ValueError("patch_strategy must be one of 'replace', 'add'")
+        gen_out = mt.generator.output.save()
+
+    start = 0
+    if remove_prefix:
+        start = inputs.input_ids.shape[1]
+    return mt.tokenizer.batch_decode(
+        gen_out.sequences[:, start:], skip_special_tokens=True
+    )
+
+def any_is_nontrivial_prefix(predictions: list[str], target: str) -> bool:
+    """Return true if any prediction is (case insensitive) prefix of the target."""
+    return any(is_nontrivial_prefix(p, target) for p in predictions)
+
+def is_nontrivial_prefix(prediction: str, target: str) -> bool:
+    """Return true if prediction is (case insensitive) prefix of the target."""
+    target = target.lower().strip()
+    prediction = prediction.lower().strip()
+    return len(prediction) > 0 and target.startswith(prediction)

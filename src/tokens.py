@@ -163,10 +163,10 @@ def find_token_range(
         if token_start is None:
             if token_char_start <= char_start and token_char_end >= char_start:
                 token_start = index
-            if token_end is None:
-                if token_char_start <= char_end and token_char_end >= char_end:
-                    token_end = index
-                    break
+        if token_end is None:
+            if token_char_start <= char_end and token_char_end >= char_end:
+                token_end = index
+                break
 
     assert (
         token_start is not None
@@ -256,7 +256,7 @@ def align_patching_positions(
     if clean_input is None:
         clean_input = prepare_input(
             prompts=prompt_template.format(clean_subj),
-            tokenzier=mt,
+            tokenizer=mt,
             return_offsets_mapping=True,
         )
     else:

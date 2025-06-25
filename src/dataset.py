@@ -12,5 +12,4 @@ class ActivationPatchingSamples(DataClassJsonMixin):
     patched_answer_toks: list[int] | None = None
 
     def __str__(self):
-        return f'{self.common_entity} | {self.clean_entity} => "{self.clean_answer}" | \
-            {self.patched_entity} => "{self.patched_answer}"'
+        return f'{self.common_entity} | {self.clean_entity} => "{self.clean_answer}" | <-- | {self.patched_entity} => "{self.patched_answer}"'
