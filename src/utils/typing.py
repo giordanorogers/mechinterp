@@ -1,5 +1,6 @@
 import numpy
 import torch
+import pathlib
 import transformers
 from typing import Optional, Literal, Sequence
 from nnsight import LanguageModel
@@ -7,6 +8,7 @@ from dataclasses import dataclass
 from dataclasses_json import DataClassJsonMixin
 
 ArrayLike = list | tuple | numpy.ndarray | torch.Tensor
+PathLike = str | pathlib.Path
 
 # Throughout this codebase, we use HuggingFace model implementations.
 Model = (

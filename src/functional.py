@@ -1,8 +1,9 @@
+import copy
 import string
 import gc
 import torch
 from dataclasses import dataclass
-from typing import Union, Optional, Literal
+from typing import Union, Optional, Literal, Any
 from src.models import ModelandTokenizer, unwrap_tokenizer
 from src.tokens import prepare_input
 from src.utils.printer import printer
@@ -52,6 +53,58 @@ def get_keywords_from_text(
 
         prev_tok = tok
     return filtered
+
+@torch.inference_mode()
+def interpret_logits(
+    tokenizer: ModelandTokenizer | Tokenizer,
+    logits: torch.Tensor,
+    k: int = 5,
+    interested_tokens: tuple[int] = (),
+) -> (
+    list[PredictedToken]
+    | tuple[list[PredictedToken], dict[int, tuple[int, PredictedToken]]]
+):
+    tokenizer = unwrap_tokenizer(tokenizer)
+    logits = logits.squeeze()
+    probs = torch.nn.functional.softmax(logits, dim=-1).squeeze()
+    top_k_indices = logits.topk(dim=-1, k=k).indices.squeeze().tolist()
+    if isinstance(top_k_indices, ArrayLike) is False:
+        top_k_indices = [top_k_indices]
+
+    candidates = [
+        PredictedToken(
+            token=tokenizer.decode(t),
+            prob=probs[t].item(),
+            logit=logits[t].item(),
+            token_id=t,
+        )
+        for t in top_k_indices
+    ]
+
+    if len(interested_tokens) > 0:
+        rank_tokens = logits.argsort(descending=True).tolist()
+        probs = torch.nn.functional.softmax(logits, dim=-1)
+        interested_logits = {
+            t: (
+                rank_tokens.index(t) + 1,
+                PredictedToken(
+                    token=tokenizer.decode(t),
+                    prob=probs[t].item(),
+                    logit=logits[t].item(),
+                    token_id=t
+                ),
+            )
+            for t in interested_tokens
+        }
+
+        interested_logits = {
+            k: v
+            for k, v in sorted(
+                interested_logits.items(), key=lambda x: x[1][1].prob, reverse=True
+            )
+        }
+        return candidates, interested_logits
+    return candidates
 
 # dataclass: Automatic special method creation
 # frozen=False: The object is mutable -- can change field values after creation
@@ -104,17 +157,17 @@ def normalize_token_of_interest(token_of_interest, num_inputs):
 def interpret_logits(
     tokenizer: ModelandTokenizer | Tokenizer,
     logits: torch.Tensor,
-    topK: int = 5,
+    k: int = 5,
     interested_tokens: tuple[int] = (),
 ) -> (
     list[PredictedToken]
     | tuple[list[PredictedToken], dict[int, tuple[int, PredictedToken]]]
 ):
     tokenizer = unwrap_tokenizer(tokenizer)
-    # squeeze: Removes dimensions of size 1 from the tensor
+    # print(type(tokenizer))
     logits = logits.squeeze()
     probs = torch.nn.functional.softmax(logits, dim=-1).squeeze()
-    top_k_indices = logits.topk(dim=-1, k=topK).indices.squeeze().tolist()
+    top_k_indices = logits.topk(dim=-1, k=k).indices.squeeze().tolist()
     if isinstance(top_k_indices, ArrayLike) is False:
         top_k_indices = [top_k_indices]
 
@@ -128,8 +181,29 @@ def interpret_logits(
         for t in top_k_indices
     ]
 
-    # TODO: Add interested_tokens logic
-
+    if len(interested_tokens) > 0:
+        rank_tokens = logits.argsort(descending=True).tolist()
+        probs = torch.nn.functional.softmax(logits, dim=-1)
+        interested_logits = {
+            t: (
+                rank_tokens.index(t) + 1,
+                PredictedToken(
+                    token=tokenizer.decode(t),
+                    prob=probs[t].item(),
+                    logit=logits[t].item(),
+                    token_id=t,
+                ),
+            )
+            for t in interested_tokens
+        }
+        # print(interested_logits)
+        interested_logits = {
+            k: v
+            for k, v in sorted(
+                interested_logits.items(), key=lambda x: x[1][1].prob, reverse=True
+            )
+        }
+        return candidates, interested_logits
     return candidates
 
 #InferenceMode is a context manager analogous to :class:`~no_grad`
@@ -141,7 +215,7 @@ def predict_next_token(
     # Union type; Union[X, Y] means either X or Y
     # TokenizerOutput is a transformers BatchEncoding tokenizer dict-like object
     inputs: Union[str, list[str]] | TokenizerOutput,
-    topK: int = 5, # Top K most probable tokens to consider
+    k: int = 5, # Top K most probable tokens to consider
     batch_size: int = 8,
     # Set a token of interest as [input, token_num], or a list of [input, token_num]'s
     token_of_interest: Optional[Union[Union[str, int], list[Union[str, int]]]] = None,
@@ -192,7 +266,7 @@ def predict_next_token(
 
         batch_logits = batch_logits[:, -1, :]
         batch_probs = batch_logits.float().softmax(dim=-1)
-        batch_topk = batch_probs.topk(k=topK, dim=-1)
+        batch_topk = batch_probs.topk(k=k, dim=-1)
 
         # TODO: Add token of interest logic.
 
@@ -202,7 +276,7 @@ def predict_next_token(
             top_pred = interpret_logits(
                 tokenizer=mt,
                 logits=batch_logits[batch_order],
-                topK=topK,
+                k=k,
                 #interested_tokens=(
                 #    batch_interested_token_indices[batch_order]
                 #    if token_of_interest is not None
@@ -291,3 +365,150 @@ def is_nontrivial_prefix(prediction: str, target: str) -> bool:
     target = target.lower().strip()
     prediction = prediction.lower().strip()
     return len(prediction) > 0 and target.startswith(prediction)
+
+def get_tick_marker(value: bool) -> str:
+    """Returns a tick or cross marker depending on the value."""
+    return "✓" if value else "✗"
+
+def untuple(object: Any):
+    if isinstance(object, tuple) or (
+        "LanguageModelProxy" in str(type(object)) and len(object) > 1
+    ):
+        return object[0]
+    return object
+
+@torch.inference_mode()
+def get_hs(
+    mt: ModelandTokenizer,
+    input: str | TokenizerOutput,
+    locations: tuple[str, int] | list[tuple[str, int]],
+    patches: Optional[PatchSpec | list[PatchSpec]] = None,
+    return_dict: bool = False,
+) -> torch.Tensor | dict[tuple[str, int], torch.Tensor]:
+    if isinstance(input, TokenizerOutput):
+        if "offset_mapping" in input:
+            input.pop("offset_mapping")
+    else:
+        input = prepare_input(prompts=input, tokenizer=mt.tokenizer)
+
+    if isinstance(locations, tuple):
+        locations = [locations]
+    if patches is not None and isinstance(patches, PatchSpec):
+        patches = [patches]
+
+    def is_an_attn_head(module_name) -> bool | tuple[int, int]:
+        attn_id = mt.attn_module_name_format.split(".")[-1]
+        if attn_id not in module_name:
+            return False
+        if module_name.endswith(attn_id):
+            return False
+        
+        head_id = module_name.split(".")[-1]
+        layer_id = ".".join(module_name.split(".")[:-1])
+
+        return layer_id, int(head_id)
+    
+    layer_names = [layer_name for layer_name, _ in locations]
+    layer_names = list(set(layer_names))
+    layer_states = {layer_name: torch.empty(0) for layer_name in layer_names}
+    with mt.trace(input, scan=False):
+        if patches is not None:
+            for cur_patch in patches:
+                module_name, index = cur_patch.location
+                if is_an_attn_head(module_name) is True:
+                    raise NotImplementedError(
+                        "patching not supported yet for attn heads"
+                    )
+                module = get_module_nnsight(mt, module_name)
+                current_state = (
+                    module.output.save()
+                    if ("mlp" in module_name or module_name == mt.embedder_name)
+                    else module.output[0].save()
+                )
+                current_state[:, index, :] = cur_patch.patch
+        
+        for layer_name in layer_names:
+            if is_an_attn_head(layer_name) is False:
+                module = get_module_nnsight(mt, layer_name)
+                layer_states[layer_name] = module.output.save()
+            else:
+                attn_module_name, head_idx = is_an_attn_head(layer_name)
+                o_proj_name = attn_module_name + ".o_proj"
+                head_dim = mt.n_embd // mt.model.config.num_attention_heads
+                o_proj = get_module_nnsight(mt, o_proj_name)
+                layer_states[layer_name] = o_proj.input[0][0][
+                    :, :, head_idx * head_dim : (head_idx + 1) * head_dim
+                ].save()
+
+    hs = {}
+
+    for layer_name, index in locations:
+        hs[(layer_name, index)] = untuple(layer_states[layer_name].value)[
+            :, index, :
+        ].squeeze()
+
+    if len(hs) == 1 and not return_dict:
+        return list(hs.values())[0]
+    return hs
+
+@torch.inference_mode
+def get_all_module_states(
+    mt: ModelandTokenizer,
+    input: str | TokenizerOutput,
+    kind: Literal["residual", "mlp", "attention"] = "residual",
+) -> dict[tuple[str, int], torch.Tensor]:
+    if isinstance(input, TokenizerOutput):
+        if "offset_mapping" in input:
+            input.pop("offset_mapping")
+    else:
+        input = prepare_input(prompts=input, tokenizer=mt.tokenizer)
+
+    layer_name_format = None
+    if kind == "residual":
+        layer_name_format = mt.layer_name_format
+    elif kind == "mlp":
+        layer_name_format = mt.mlp_module_name_format
+    elif kind == "attention":
+        layer_name_format = mt.attn_module_name_format
+    else:
+        raise ValueError("kind must be one of 'residual', 'mlp', 'attention'")
+    
+    layer_and_index = []
+    for layer_idx in range(mt.n_layer):
+        for token_idx in range(input.input_ids.shape[1]):
+            layer_and_index.append((layer_name_format.format(layer_idx), token_idx))
+
+    return get_hs(mt, input, layer_and_index)
+
+# useful for saving with jsons
+def detensorize(inp: dict[Any, Any] | list[dict[Any, Any]], to_numpy: bool = False):
+    if isinstance(inp, list):
+        return [detensorize(i) for i in inp]
+    if isinstance(inp, dict) is False:
+        try:
+            cls = type(inp)
+            inp = inp.__dict__
+        except Exception:
+            return inp
+    else:
+        cls = None
+
+    inp = copy.deepcopy(inp)
+    for k in inp:
+        if isinstance(inp[k], torch.Tensor):
+            if len(inp[k].shape) == 0:
+                inp[k] = inp[k].item()
+            else:
+                inp[k] = inp[k].tolist() if to_numpy is False else inp[k].cpu().numpy()
+        else:
+            inp[k] = detensorize(inp[k])
+
+    free_gpu_cache()
+
+    if cls is None:
+        return inp
+    else:
+        if cls != TokenizerOutput:
+            return cls(**inp)
+        else:
+            return cls(data=inp)

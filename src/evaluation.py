@@ -38,7 +38,7 @@ def get_connection_on_entity_pair(
     if return_next_token_probs:
         if enable_reasoning is False:
             return answer, predict_next_token(
-                mt=mt, inputs=connection_prompt.prompt, topK=15
+                mt=mt, inputs=connection_prompt.prompt, k=15
             )
         else:
             logger.warning(
