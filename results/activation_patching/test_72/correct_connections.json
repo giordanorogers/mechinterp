@@ -1,3 +1,1229 @@
 {
-    "profession": []
+    "profession": [
+        {
+            "query_entities": [
+                "Mohammad Aziz",
+                "Sophie Evans"
+            ],
+            "target": "lawyer",
+            "connection": "Lawyer",
+            "next_tok_probs": [
+                "\" Lawyer\"[71314] (p=0.949, logit=22.250)",
+                "\" lawyer\"[15779] (p=0.032, logit=18.875)",
+                "\" Attorney\"[18919] (p=0.007, logit=17.375)",
+                "\" Lawyers\"[71508] (p=0.002, logit=16.125)",
+                "\" Doctor\"[19150] (p=0.002, logit=16.000)",
+                "\" they\"[814] (p=0.001, logit=15.438)",
+                "\" Law\"[7658] (p=0.001, logit=15.312)",
+                "\" lawyers\"[21866] (p=0.001, logit=15.062)",
+                "\" Legal\"[25705] (p=0.001, logit=14.938)",
+                "\" Barr\"[32817] (p=0.001, logit=14.938)",
+                "\" [\"[510] (p=0.000, logit=14.062)",
+                "\" Jur\"[39898] (p=0.000, logit=14.062)",
+                "\" attorney\"[14065] (p=0.000, logit=14.000)",
+                "\" Solic\"[77294] (p=0.000, logit=13.750)",
+                "\" Layer\"[23570] (p=0.000, logit=13.750)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Sophie Evans",
+                "Mohammad Aziz"
+            ],
+            "target": "lawyer",
+            "connection": "Lawyer",
+            "next_tok_probs": [
+                "\" Lawyer\"[71314] (p=0.941, logit=22.000)",
+                "\" lawyer\"[15779] (p=0.041, logit=18.875)",
+                "\" Attorney\"[18919] (p=0.006, logit=17.000)",
+                "\" Doctor\"[19150] (p=0.002, logit=15.688)",
+                "\" Barr\"[32817] (p=0.001, logit=15.438)",
+                "\" Law\"[7658] (p=0.001, logit=15.000)",
+                "\" Legal\"[25705] (p=0.001, logit=14.875)",
+                "\" Lawyers\"[71508] (p=0.001, logit=14.875)",
+                "\" they\"[814] (p=0.001, logit=14.875)",
+                "\" attorney\"[14065] (p=0.000, logit=13.938)",
+                "\" lawyers\"[21866] (p=0.000, logit=13.938)",
+                "\" Layer\"[23570] (p=0.000, logit=13.812)",
+                "\" Judge\"[20819] (p=0.000, logit=13.750)",
+                "\" [\"[510] (p=0.000, logit=13.750)",
+                "\" Solic\"[77294] (p=0.000, logit=13.750)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Fatima Sheikh",
+                "Grace Wanjiru"
+            ],
+            "target": "urban planner",
+            "connection": "Urban",
+            "next_tok_probs": [
+                "\" Urban\"[29422] (p=0.828, logit=22.625)",
+                "\" urban\"[16036] (p=0.087, logit=20.375)",
+                "\" Architect\"[24979] (p=0.053, logit=19.875)",
+                "\" Planner\"[75865] (p=0.012, logit=18.375)",
+                "\" City\"[4409] (p=0.003, logit=17.000)",
+                "\" architect\"[11726] (p=0.002, logit=16.750)",
+                "\" Engineer\"[29483] (p=0.002, logit=16.750)",
+                "\" Doctor\"[19150] (p=0.002, logit=16.625)",
+                "\" Environmental\"[25027] (p=0.002, logit=16.375)",
+                "\" Developer\"[25922] (p=0.001, logit=16.000)",
+                "\" Pl\"[1856] (p=0.001, logit=15.875)",
+                "\" city\"[3363] (p=0.001, logit=15.750)",
+                "\" they\"[814] (p=0.001, logit=15.375)",
+                "\" planner\"[50811] (p=0.000, logit=15.188)",
+                "\" Town\"[14298] (p=0.000, logit=15.188)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Grace Wanjiru",
+                "Fatima Sheikh"
+            ],
+            "target": "urban planner",
+            "connection": "Urban",
+            "next_tok_probs": [
+                "\" Urban\"[29422] (p=0.723, logit=21.750)",
+                "\" Architect\"[24979] (p=0.143, logit=20.125)",
+                "\" urban\"[16036] (p=0.067, logit=19.375)",
+                "\" Planner\"[75865] (p=0.017, logit=18.000)",
+                "\" Engineer\"[29483] (p=0.009, logit=17.375)",
+                "\" Doctor\"[19150] (p=0.008, logit=17.250)",
+                "\" Environmental\"[25027] (p=0.006, logit=16.875)",
+                "\" architect\"[11726] (p=0.005, logit=16.750)",
+                "\" Developer\"[25922] (p=0.004, logit=16.625)",
+                "\" City\"[4409] (p=0.004, logit=16.625)",
+                "\" Pl\"[1856] (p=0.002, logit=15.812)",
+                "\" Town\"[14298] (p=0.001, logit=15.438)",
+                "\" they\"[814] (p=0.001, logit=15.250)",
+                "\" city\"[3363] (p=0.001, logit=15.062)",
+                "\" Mayor\"[22868] (p=0.001, logit=14.750)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Yuki Tanaka",
+                "Anna Schmidt"
+            ],
+            "target": "marketing manager",
+            "connection": "Marketing",
+            "next_tok_probs": [
+                "\" Marketing\"[18729] (p=0.656, logit=19.625)",
+                "\" Mark\"[4488] (p=0.213, logit=18.500)",
+                "\" Manager\"[10790] (p=0.037, logit=16.750)",
+                "\" marketing\"[8661] (p=0.022, logit=16.250)",
+                "\" marketer\"[98363] (p=0.009, logit=15.375)",
+                "\" Sales\"[16207] (p=0.007, logit=15.125)",
+                "\" they\"[814] (p=0.007, logit=15.062)",
+                "\" Graphic\"[45051] (p=0.003, logit=14.312)",
+                "\" Executive\"[18362] (p=0.003, logit=14.062)",
+                "\" Market\"[8152] (p=0.002, logit=13.938)",
+                "\" Professional\"[21931] (p=0.002, logit=13.875)",
+                "\" professional\"[6721] (p=0.002, logit=13.812)",
+                "\" Business\"[8184] (p=0.002, logit=13.812)",
+                "\" Consultant\"[56546] (p=0.002, logit=13.750)",
+                "\" Designer\"[15940] (p=0.002, logit=13.562)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Anna Schmidt",
+                "Yuki Tanaka"
+            ],
+            "target": "marketing manager",
+            "connection": "Marketing",
+            "next_tok_probs": [
+                "\" Marketing\"[18729] (p=0.467, logit=17.375)",
+                "\" Mark\"[4488] (p=0.194, logit=16.500)",
+                "\" Manager\"[10790] (p=0.038, logit=14.875)",
+                "\" Graphic\"[45051] (p=0.036, logit=14.812)",
+                "\" Photographer\"[75839] (p=0.034, logit=14.750)",
+                "\" marketing\"[8661] (p=0.017, logit=14.062)",
+                "\" Student\"[11988] (p=0.017, logit=14.062)",
+                "\" Designer\"[15940] (p=0.014, logit=13.875)",
+                "\" Doctor\"[19150] (p=0.011, logit=13.625)",
+                "\" they\"[814] (p=0.011, logit=13.625)",
+                "\" Artist\"[29459] (p=0.010, logit=13.562)",
+                "\" Sales\"[16207] (p=0.010, logit=13.500)",
+                "\" Business\"[8184] (p=0.006, logit=13.000)",
+                "\" marketer\"[98363] (p=0.006, logit=12.938)",
+                "\" student\"[5575] (p=0.005, logit=12.812)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Chinedu Okafor",
+                "Nguyen Van Duc"
+            ],
+            "target": "marine biologist",
+            "connection": "Marine",
+            "next_tok_probs": [
+                "\" Marine\"[23820] (p=0.303, logit=20.000)",
+                "\" Bi\"[12371] (p=0.208, logit=19.625)",
+                "\" marine\"[29691] (p=0.126, logit=19.125)",
+                "\" Professor\"[17054] (p=0.060, logit=18.375)",
+                "\" Research\"[8483] (p=0.060, logit=18.375)",
+                "\" Scientist\"[68409] (p=0.052, logit=18.250)",
+                "\" Ocean\"[22302] (p=0.052, logit=18.250)",
+                "\" Doctor\"[19150] (p=0.046, logit=18.125)",
+                "\" Aqu\"[23815] (p=0.017, logit=17.125)",
+                "\" ocean\"[18435] (p=0.012, logit=16.750)",
+                "\" scientist\"[28568] (p=0.012, logit=16.750)",
+                "\" researcher\"[32185] (p=0.010, logit=16.625)",
+                "\" Academic\"[42170] (p=0.009, logit=16.500)",
+                "\" biologist\"[88704] (p=0.005, logit=15.812)",
+                "\" professor\"[14561] (p=0.004, logit=15.562)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Nguyen Van Duc",
+                "Chinedu Okafor"
+            ],
+            "target": "marine biologist",
+            "connection": "Marine",
+            "next_tok_probs": [
+                "\" Marine\"[23820] (p=0.688, logit=21.250)",
+                "\" marine\"[29691] (p=0.120, logit=19.500)",
+                "\" Ocean\"[22302] (p=0.064, logit=18.875)",
+                "\" Bi\"[12371] (p=0.056, logit=18.750)",
+                "\" Doctor\"[19150] (p=0.024, logit=17.875)",
+                "\" Research\"[8483] (p=0.011, logit=17.125)",
+                "\" Scientist\"[68409] (p=0.008, logit=16.750)",
+                "\" ocean\"[18435] (p=0.007, logit=16.625)",
+                "\" Aqu\"[23815] (p=0.007, logit=16.625)",
+                "\" Professor\"[17054] (p=0.004, logit=16.125)",
+                "\" researcher\"[32185] (p=0.002, logit=15.250)",
+                "\" scientist\"[28568] (p=0.001, logit=15.000)",
+                "\" Environmental\"[25027] (p=0.001, logit=14.875)",
+                "\" biologist\"[88704] (p=0.001, logit=14.812)",
+                "\" environmental\"[12434] (p=0.000, logit=13.875)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Amara Adeyemi",
+                "Pierre Dubois"
+            ],
+            "target": "author of fiction",
+            "connection": "Author",
+            "next_tok_probs": [
+                "\" Author\"[7030] (p=0.652, logit=22.000)",
+                "\" Writer\"[30504] (p=0.165, logit=20.625)",
+                "\" author\"[3229] (p=0.100, logit=20.125)",
+                "\" writer\"[7061] (p=0.029, logit=18.875)",
+                "\" novelist\"[81747] (p=0.020, logit=18.500)",
+                "\" Nov\"[4723] (p=0.020, logit=18.500)",
+                "\" they\"[814] (p=0.003, logit=16.625)",
+                "\" Fiction\"[43754] (p=0.002, logit=16.375)",
+                "\" Doctor\"[19150] (p=0.002, logit=16.125)",
+                "\" Professor\"[17054] (p=0.001, logit=15.875)",
+                "\" Authors\"[25095] (p=0.001, logit=15.000)",
+                "\" authors\"[12283] (p=0.001, logit=14.938)",
+                "\" Artist\"[29459] (p=0.000, logit=14.688)",
+                "\" fiction\"[17422] (p=0.000, logit=14.500)",
+                "\" [\"[510] (p=0.000, logit=13.812)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Pierre Dubois",
+                "Amara Adeyemi"
+            ],
+            "target": "author of fiction",
+            "connection": "Author",
+            "next_tok_probs": [
+                "\" Author\"[7030] (p=0.539, logit=20.875)",
+                "\" Writer\"[30504] (p=0.256, logit=20.125)",
+                "\" author\"[3229] (p=0.094, logit=19.125)",
+                "\" writer\"[7061] (p=0.050, logit=18.500)",
+                "\" novelist\"[81747] (p=0.018, logit=17.500)",
+                "\" Nov\"[4723] (p=0.016, logit=17.375)",
+                "\" they\"[814] (p=0.006, logit=16.375)",
+                "\" Professor\"[17054] (p=0.003, logit=15.812)",
+                "\" Doctor\"[19150] (p=0.002, logit=15.312)",
+                "\" Fiction\"[43754] (p=0.001, logit=14.938)",
+                "\" Artist\"[29459] (p=0.001, logit=14.938)",
+                "\" authors\"[12283] (p=0.001, logit=14.875)",
+                "\" Authors\"[25095] (p=0.001, logit=14.688)",
+                "\" writers\"[16483] (p=0.001, logit=14.312)",
+                "\" Writers\"[59798] (p=0.001, logit=14.000)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Hans Mueller",
+                "Ayse Kaya"
+            ],
+            "target": "economist",
+            "connection": "Economist",
+            "next_tok_probs": [
+                "\" Economist\"[84038] (p=0.949, logit=23.250)",
+                "\" economist\"[46215] (p=0.037, logit=20.000)",
+                "\" Professor\"[17054] (p=0.007, logit=18.375)",
+                "\" Doctor\"[19150] (p=0.002, logit=17.000)",
+                "\" Econom\"[51183] (p=0.001, logit=16.250)",
+                "\" professor\"[14561] (p=0.001, logit=16.000)",
+                "\" Academic\"[42170] (p=0.000, logit=15.625)",
+                "\" economists\"[45415] (p=0.000, logit=15.125)",
+                "\" Economics\"[35300] (p=0.000, logit=14.938)",
+                "\" Scholar\"[25542] (p=0.000, logit=14.438)",
+                "\" academic\"[14584] (p=0.000, logit=14.375)",
+                "\" [\"[510] (p=0.000, logit=14.062)",
+                "\" Economic\"[23362] (p=0.000, logit=14.062)",
+                "\" Financial\"[17961] (p=0.000, logit=13.812)",
+                "\" they\"[814] (p=0.000, logit=13.750)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Ayse Kaya",
+                "Hans Mueller"
+            ],
+            "target": "economist",
+            "connection": "Economist",
+            "next_tok_probs": [
+                "\" Economist\"[84038] (p=0.957, logit=23.625)",
+                "\" economist\"[46215] (p=0.037, logit=20.375)",
+                "\" Professor\"[17054] (p=0.003, logit=17.750)",
+                "\" Doctor\"[19150] (p=0.001, logit=17.125)",
+                "\" Econom\"[51183] (p=0.001, logit=17.000)",
+                "\" economists\"[45415] (p=0.000, logit=15.938)",
+                "\" professor\"[14561] (p=0.000, logit=15.250)",
+                "\" Academic\"[42170] (p=0.000, logit=15.125)",
+                "\" Economics\"[35300] (p=0.000, logit=14.875)",
+                "\" Scholar\"[25542] (p=0.000, logit=14.125)",
+                "\" they\"[814] (p=0.000, logit=13.938)",
+                "\" [\"[510] (p=0.000, logit=13.938)",
+                "\" academic\"[14584] (p=0.000, logit=13.938)",
+                "\" Economic\"[23362] (p=0.000, logit=13.938)",
+                "\" Research\"[8483] (p=0.000, logit=13.875)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Carlos Rodriguez",
+                "Camila Torres"
+            ],
+            "target": "accountant",
+            "connection": "Account",
+            "next_tok_probs": [
+                "\" Account\"[8785] (p=0.922, logit=20.375)",
+                "\" accountant\"[76021] (p=0.031, logit=17.000)",
+                "\" Doctor\"[19150] (p=0.006, logit=15.312)",
+                "\" Financial\"[17961] (p=0.005, logit=15.062)",
+                "\" Student\"[11988] (p=0.004, logit=14.938)",
+                "\" Lawyer\"[71314] (p=0.002, logit=14.250)",
+                "\" Business\"[8184] (p=0.002, logit=14.250)",
+                "\" Professional\"[21931] (p=0.002, logit=14.188)",
+                "\" they\"[814] (p=0.001, logit=13.875)",
+                "\" account\"[2759] (p=0.001, logit=13.812)",
+                "\" Finance\"[23261] (p=0.001, logit=13.750)",
+                "\" Public\"[3142] (p=0.001, logit=13.500)",
+                "\" Manager\"[10790] (p=0.001, logit=13.438)",
+                "\" student\"[5575] (p=0.001, logit=13.438)",
+                "\" Engineer\"[29483] (p=0.001, logit=13.438)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Camila Torres",
+                "Carlos Rodriguez"
+            ],
+            "target": "accountant",
+            "connection": "Account",
+            "next_tok_probs": [
+                "\" Account\"[8785] (p=0.898, logit=19.875)",
+                "\" accountant\"[76021] (p=0.035, logit=16.625)",
+                "\" Financial\"[17961] (p=0.008, logit=15.125)",
+                "\" Doctor\"[19150] (p=0.007, logit=15.062)",
+                "\" Music\"[10948] (p=0.007, logit=15.000)",
+                "\" Student\"[11988] (p=0.004, logit=14.500)",
+                "\" Business\"[8184] (p=0.003, logit=14.250)",
+                "\" Engineer\"[29483] (p=0.002, logit=13.750)",
+                "\" Finance\"[23261] (p=0.002, logit=13.625)",
+                "\" Manager\"[10790] (p=0.002, logit=13.562)",
+                "\" Lawyer\"[71314] (p=0.002, logit=13.562)",
+                "\" Economist\"[84038] (p=0.002, logit=13.500)",
+                "\" Public\"[3142] (p=0.001, logit=13.375)",
+                "\" Professional\"[21931] (p=0.001, logit=13.188)",
+                "\" student\"[5575] (p=0.001, logit=13.188)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Sofia Hernandez",
+                "Priya Patel"
+            ],
+            "target": "graphic designer",
+            "connection": "Graphic",
+            "next_tok_probs": [
+                "\" Graphic\"[45051] (p=0.762, logit=20.375)",
+                "\" Designer\"[15940] (p=0.117, logit=18.500)",
+                "\" Artist\"[29459] (p=0.038, logit=17.375)",
+                "\" graphic\"[21154] (p=0.038, logit=17.375)",
+                "\" artist\"[10255] (p=0.011, logit=16.125)",
+                "\" designer\"[15034] (p=0.007, logit=15.750)",
+                "\" Doctor\"[19150] (p=0.004, logit=15.125)",
+                "\" Architect\"[24979] (p=0.003, logit=14.938)",
+                "\" Illustrator\"[100160] (p=0.003, logit=14.750)",
+                "\" they\"[814] (p=0.003, logit=14.688)",
+                "\" [\"[510] (p=0.001, logit=13.562)",
+                "\" Student\"[11988] (p=0.001, logit=13.438)",
+                "\" Graph\"[12441] (p=0.001, logit=13.438)",
+                "\" Graphics\"[20914] (p=0.001, logit=13.250)",
+                "\" Visual\"[20796] (p=0.001, logit=13.250)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Priya Patel",
+                "Sofia Hernandez"
+            ],
+            "target": "graphic designer",
+            "connection": "Graphic",
+            "next_tok_probs": [
+                "\" Graphic\"[45051] (p=0.789, logit=21.750)",
+                "\" Designer\"[15940] (p=0.121, logit=19.875)",
+                "\" graphic\"[21154] (p=0.031, logit=18.500)",
+                "\" Artist\"[29459] (p=0.019, logit=18.000)",
+                "\" Architect\"[24979] (p=0.016, logit=17.875)",
+                "\" designer\"[15034] (p=0.005, logit=16.750)",
+                "\" artist\"[10255] (p=0.005, logit=16.625)",
+                "\" Illustrator\"[100160] (p=0.002, logit=15.750)",
+                "\" architect\"[11726] (p=0.001, logit=15.375)",
+                "\" Doctor\"[19150] (p=0.001, logit=15.375)",
+                "\" they\"[814] (p=0.001, logit=15.188)",
+                "\" Graphics\"[20914] (p=0.001, logit=14.938)",
+                "\" Graph\"[12441] (p=0.001, logit=14.812)",
+                "\" Photographer\"[75839] (p=0.001, logit=14.438)",
+                "\" [\"[510] (p=0.000, logit=14.312)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Rajesh Kumar",
+                "Layla Mahmoud"
+            ],
+            "target": "aerospace engineer",
+            "connection": "Aerospace",
+            "next_tok_probs": [
+                "\" Aerospace\"[81965] (p=0.488, logit=22.250)",
+                "\" Engineer\"[29483] (p=0.336, logit=21.875)",
+                "\" Doctor\"[19150] (p=0.052, logit=20.000)",
+                "\" aerospace\"[78164] (p=0.045, logit=19.875)",
+                "\" engineer\"[24490] (p=0.024, logit=19.250)",
+                "\" A\"[362] (p=0.021, logit=19.125)",
+                "\" Astr\"[39616] (p=0.008, logit=18.125)",
+                "\" Scientist\"[68409] (p=0.005, logit=17.750)",
+                "\" a\"[264] (p=0.004, logit=17.500)",
+                "\" Professor\"[17054] (p=0.004, logit=17.375)",
+                "\" Aer\"[64150] (p=0.003, logit=17.125)",
+                "\" Aero\"[89523] (p=0.001, logit=16.250)",
+                "\" Engineers\"[49796] (p=0.001, logit=16.125)",
+                "\" astronaut\"[47733] (p=0.001, logit=16.125)",
+                "\" Research\"[8483] (p=0.001, logit=16.000)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Siriporn Suwannarat",
+                "Marie Laurent"
+            ],
+            "target": "nutritionist",
+            "connection": "Nutrition",
+            "next_tok_probs": [
+                "\" Nutrition\"[39700] (p=0.473, logit=20.875)",
+                "\" Chef\"[37075] (p=0.324, logit=20.500)",
+                "\" nutrition\"[26677] (p=0.072, logit=19.000)",
+                "\" Diet\"[27304] (p=0.064, logit=18.875)",
+                "\" Doctor\"[19150] (p=0.024, logit=17.875)",
+                "\" chef\"[30806] (p=0.013, logit=17.250)",
+                "\" diet\"[10173] (p=0.005, logit=16.375)",
+                "\" Nut\"[18878] (p=0.005, logit=16.375)",
+                "\" Chem\"[19531] (p=0.003, logit=15.812)",
+                "\" Scientist\"[68409] (p=0.002, logit=15.375)",
+                "\" Food\"[12369] (p=0.002, logit=15.312)",
+                "\" Health\"[6401] (p=0.002, logit=15.188)",
+                "\" Research\"[8483] (p=0.001, logit=14.938)",
+                "\" health\"[2890] (p=0.001, logit=14.438)",
+                "\" they\"[814] (p=0.001, logit=14.250)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Ahmed Hassan",
+                "Zahra Hosseini"
+            ],
+            "target": "pilot",
+            "connection": "Pilot",
+            "next_tok_probs": [
+                "\" Pilot\"[45599] (p=0.930, logit=22.375)",
+                "\" pilot\"[18178] (p=0.041, logit=19.250)",
+                "\" Engineer\"[29483] (p=0.007, logit=17.500)",
+                "\" Air\"[6690] (p=0.004, logit=17.000)",
+                "\" Doctor\"[19150] (p=0.004, logit=17.000)",
+                "\" Astr\"[39616] (p=0.003, logit=16.500)",
+                "\" pilots\"[36377] (p=0.002, logit=16.375)",
+                "\" Pil\"[37451] (p=0.002, logit=16.250)",
+                "\" Av\"[7671] (p=0.001, logit=15.500)",
+                "\" engineer\"[24490] (p=0.001, logit=15.188)",
+                "\" Aerospace\"[81965] (p=0.000, logit=14.812)",
+                "\" Photographer\"[75839] (p=0.000, logit=14.500)",
+                "\" Lawyer\"[71314] (p=0.000, logit=14.438)",
+                "\" av\"[1860] (p=0.000, logit=14.312)",
+                "\" Aviation\"[50047] (p=0.000, logit=14.250)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Zahra Hosseini",
+                "Ahmed Hassan"
+            ],
+            "target": "pilot",
+            "connection": "Pilot",
+            "next_tok_probs": [
+                "\" Pilot\"[45599] (p=0.922, logit=22.125)",
+                "\" pilot\"[18178] (p=0.041, logit=19.000)",
+                "\" Engineer\"[29483] (p=0.012, logit=17.750)",
+                "\" Doctor\"[19150] (p=0.007, logit=17.250)",
+                "\" Air\"[6690] (p=0.004, logit=16.750)",
+                "\" Av\"[7671] (p=0.003, logit=16.375)",
+                "\" Pil\"[37451] (p=0.001, logit=15.688)",
+                "\" Astr\"[39616] (p=0.001, logit=15.625)",
+                "\" pilots\"[36377] (p=0.001, logit=15.438)",
+                "\" engineer\"[24490] (p=0.001, logit=15.188)",
+                "\" av\"[1860] (p=0.001, logit=15.062)",
+                "\" Aviation\"[50047] (p=0.001, logit=14.812)",
+                "\" Aerospace\"[81965] (p=0.001, logit=14.688)",
+                "\" Photographer\"[75839] (p=0.000, logit=14.375)",
+                "\" Commercial\"[28943] (p=0.000, logit=14.125)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Min-jun Park",
+                "Kwame Mensah"
+            ],
+            "target": "geologist",
+            "connection": "Ge",
+            "next_tok_probs": [
+                "\" Ge\"[4323] (p=0.875, logit=23.125)",
+                "\" ge\"[3980] (p=0.104, logit=21.000)",
+                "\" Doctor\"[19150] (p=0.008, logit=18.375)",
+                "\" Professor\"[17054] (p=0.003, logit=17.500)",
+                "\" Scientist\"[68409] (p=0.003, logit=17.375)",
+                "\" Research\"[8483] (p=0.002, logit=16.875)",
+                "\" Geo\"[33010] (p=0.001, logit=16.250)",
+                "\" scientist\"[28568] (p=0.001, logit=15.750)",
+                "\" Rock\"[9305] (p=0.000, logit=15.188)",
+                "\" Mineral\"[50416] (p=0.000, logit=15.000)",
+                "\" Vol\"[11119] (p=0.000, logit=14.875)",
+                "\" Earth\"[9420] (p=0.000, logit=14.688)",
+                "\" rock\"[7091] (p=0.000, logit=14.562)",
+                "\" Geological\"[80850] (p=0.000, logit=14.438)",
+                "\" professor\"[14561] (p=0.000, logit=14.438)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Kwame Mensah",
+                "Min-jun Park"
+            ],
+            "target": "geologist",
+            "connection": "Ge",
+            "next_tok_probs": [
+                "\" Ge\"[4323] (p=0.785, logit=21.000)",
+                "\" ge\"[3980] (p=0.064, logit=18.500)",
+                "\" Doctor\"[19150] (p=0.044, logit=18.125)",
+                "\" Professor\"[17054] (p=0.030, logit=17.750)",
+                "\" Research\"[8483] (p=0.027, logit=17.625)",
+                "\" Scientist\"[68409] (p=0.024, logit=17.500)",
+                "\" scientist\"[28568] (p=0.003, logit=15.438)",
+                "\" Earth\"[9420] (p=0.002, logit=15.062)",
+                "\" researcher\"[32185] (p=0.002, logit=14.938)",
+                "\" Academic\"[42170] (p=0.002, logit=14.875)",
+                "\" Geo\"[33010] (p=0.002, logit=14.750)",
+                "\" professor\"[14561] (p=0.002, logit=14.750)",
+                "\" Explorer\"[30252] (p=0.001, logit=14.375)",
+                "\" Miner\"[91012] (p=0.001, logit=14.250)",
+                "\" they\"[814] (p=0.001, logit=14.125)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Marco Rossi",
+                "Tran Thi Mai"
+            ],
+            "target": "architect",
+            "connection": "Architect",
+            "next_tok_probs": [
+                "\" Architect\"[24979] (p=0.953, logit=23.750)",
+                "\" architect\"[11726] (p=0.042, logit=20.625)",
+                "\" Designer\"[15940] (p=0.001, logit=16.375)",
+                "\" Architects\"[78113] (p=0.001, logit=16.250)",
+                "\" Architecture\"[38943] (p=0.000, logit=16.000)",
+                "\" Doctor\"[19150] (p=0.000, logit=15.938)",
+                "\" Engineer\"[29483] (p=0.000, logit=15.938)",
+                "\" architects\"[56035] (p=0.000, logit=15.750)",
+                "\" they\"[814] (p=0.000, logit=15.500)",
+                "\" [\"[510] (p=0.000, logit=14.375)",
+                "\" Arch\"[9683] (p=0.000, logit=14.188)",
+                "\" designer\"[15034] (p=0.000, logit=14.062)",
+                "\" Interior\"[29958] (p=0.000, logit=13.750)",
+                "\" architecture\"[18112] (p=0.000, logit=13.750)",
+                "\" architectural\"[43563] (p=0.000, logit=13.750)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Tran Thi Mai",
+                "Marco Rossi"
+            ],
+            "target": "architect",
+            "connection": "Architect",
+            "next_tok_probs": [
+                "\" Architect\"[24979] (p=0.945, logit=22.125)",
+                "\" architect\"[11726] (p=0.042, logit=19.000)",
+                "\" Designer\"[15940] (p=0.004, logit=16.750)",
+                "\" Doctor\"[19150] (p=0.001, logit=15.500)",
+                "\" they\"[814] (p=0.001, logit=15.188)",
+                "\" Architecture\"[38943] (p=0.001, logit=14.812)",
+                "\" Engineer\"[29483] (p=0.001, logit=14.812)",
+                "\" Architects\"[78113] (p=0.000, logit=14.500)",
+                "\" designer\"[15034] (p=0.000, logit=14.250)",
+                "\" architects\"[56035] (p=0.000, logit=14.000)",
+                "\" Artist\"[29459] (p=0.000, logit=13.812)",
+                "\" [\"[510] (p=0.000, logit=13.438)",
+                "\" Academic\"[42170] (p=0.000, logit=13.250)",
+                "\" architectural\"[43563] (p=0.000, logit=13.188)",
+                "\" Arch\"[9683] (p=0.000, logit=13.062)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Giulia Romano",
+                "Akosua Boateng"
+            ],
+            "target": "data analyst",
+            "connection": "Data",
+            "next_tok_probs": [
+                "\" Data\"[2956] (p=0.910, logit=19.625)",
+                "\" data\"[828] (p=0.023, logit=15.938)",
+                "\" Analyst\"[41570] (p=0.015, logit=15.500)",
+                "\" Doctor\"[19150] (p=0.013, logit=15.375)",
+                "\" they\"[814] (p=0.005, logit=14.375)",
+                "\" Research\"[8483] (p=0.004, logit=14.250)",
+                "\" Photographer\"[75839] (p=0.002, logit=13.688)",
+                "\" Consultant\"[56546] (p=0.002, logit=13.438)",
+                "\" Stat\"[12442] (p=0.002, logit=13.375)",
+                "\" researcher\"[32185] (p=0.001, logit=13.125)",
+                "\" Professor\"[17054] (p=0.001, logit=12.938)",
+                "\" Engineer\"[29483] (p=0.001, logit=12.625)",
+                "\" Professional\"[21931] (p=0.001, logit=12.562)",
+                "\" analyst\"[18738] (p=0.001, logit=12.375)",
+                "\" [\"[510] (p=0.001, logit=12.312)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Akosua Boateng",
+                "Giulia Romano"
+            ],
+            "target": "data analyst",
+            "connection": "Data",
+            "next_tok_probs": [
+                "\" Data\"[2956] (p=0.918, logit=20.375)",
+                "\" data\"[828] (p=0.025, logit=16.750)",
+                "\" Analyst\"[41570] (p=0.022, logit=16.625)",
+                "\" Doctor\"[19150] (p=0.006, logit=15.375)",
+                "\" Research\"[8483] (p=0.005, logit=15.062)",
+                "\" Stat\"[12442] (p=0.002, logit=14.250)",
+                "\" they\"[814] (p=0.001, logit=13.875)",
+                "\" Engineer\"[29483] (p=0.001, logit=13.812)",
+                "\" researcher\"[32185] (p=0.001, logit=13.562)",
+                "\" Scientist\"[68409] (p=0.001, logit=13.188)",
+                "\" analyst\"[18738] (p=0.001, logit=13.062)",
+                "\" statistic\"[43589] (p=0.001, logit=13.000)",
+                "\" Professor\"[17054] (p=0.001, logit=12.938)",
+                "\" [\"[510] (p=0.001, logit=12.938)",
+                "\" Consultant\"[56546] (p=0.001, logit=12.938)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Diego Martinez",
+                "Michael Johnson"
+            ],
+            "target": "musician",
+            "connection": "Music",
+            "next_tok_probs": [
+                "\" Music\"[10948] (p=0.926, logit=21.000)",
+                "\" musician\"[39844] (p=0.052, logit=18.125)",
+                "\" Doctor\"[19150] (p=0.004, logit=15.562)",
+                "\" Photographer\"[75839] (p=0.002, logit=15.000)",
+                "\" Artist\"[29459] (p=0.002, logit=14.875)",
+                "\" Composer\"[79871] (p=0.002, logit=14.688)",
+                "\" music\"[4731] (p=0.001, logit=14.375)",
+                "\" Mus\"[5444] (p=0.001, logit=14.188)",
+                "\" they\"[814] (p=0.001, logit=14.000)",
+                "\" Engineer\"[29483] (p=0.001, logit=14.000)",
+                "\" artist\"[10255] (p=0.001, logit=13.750)",
+                "\" [\"[510] (p=0.000, logit=13.438)",
+                "\" Jazz\"[36967] (p=0.000, logit=13.375)",
+                "\" Student\"[11988] (p=0.000, logit=13.188)",
+                "\" Software\"[4476] (p=0.000, logit=13.062)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Michael Johnson",
+                "Diego Martinez"
+            ],
+            "target": "musician",
+            "connection": "Music",
+            "next_tok_probs": [
+                "\" Music\"[10948] (p=0.906, logit=20.875)",
+                "\" musician\"[39844] (p=0.058, logit=18.125)",
+                "\" Photographer\"[75839] (p=0.007, logit=16.000)",
+                "\" Doctor\"[19150] (p=0.004, logit=15.438)",
+                "\" Artist\"[29459] (p=0.003, logit=15.312)",
+                "\" Composer\"[79871] (p=0.003, logit=15.000)",
+                "\" music\"[4731] (p=0.002, logit=14.500)",
+                "\" Engineer\"[29483] (p=0.001, logit=14.375)",
+                "\" they\"[814] (p=0.001, logit=14.375)",
+                "\" artist\"[10255] (p=0.001, logit=14.312)",
+                "\" Professor\"[17054] (p=0.001, logit=14.062)",
+                "\" Mus\"[5444] (p=0.001, logit=14.062)",
+                "\" photographer\"[29867] (p=0.001, logit=13.688)",
+                "\" Student\"[11988] (p=0.001, logit=13.562)",
+                "\" Teacher\"[30169] (p=0.000, logit=13.312)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Valentina Lopez",
+                "Natasha Ivanova"
+            ],
+            "target": "pharmacist",
+            "connection": "Pharm",
+            "next_tok_probs": [
+                "\" Pharm\"[25603] (p=0.404, logit=20.625)",
+                "\" Doctor\"[19150] (p=0.314, logit=20.375)",
+                "\" Chem\"[19531] (p=0.168, logit=19.750)",
+                "\" pharmacist\"[90394] (p=0.055, logit=18.625)",
+                "\" Scientist\"[68409] (p=0.014, logit=17.250)",
+                "\" chem\"[8590] (p=0.014, logit=17.250)",
+                "\" Pharmaceutical\"[59373] (p=0.003, logit=15.750)",
+                "\" Research\"[8483] (p=0.003, logit=15.562)",
+                "\" Pharmac\"[71881] (p=0.002, logit=15.500)",
+                "\" doctor\"[10896] (p=0.002, logit=15.438)",
+                "\" they\"[814] (p=0.002, logit=15.375)",
+                "\" scientist\"[28568] (p=0.002, logit=15.250)",
+                "\" Bio\"[24432] (p=0.002, logit=15.188)",
+                "\" researcher\"[32185] (p=0.001, logit=14.875)",
+                "\" Bi\"[12371] (p=0.001, logit=14.688)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Natasha Ivanova",
+                "Valentina Lopez"
+            ],
+            "target": "pharmacist",
+            "connection": "Pharm",
+            "next_tok_probs": [
+                "\" Pharm\"[25603] (p=0.479, logit=21.125)",
+                "\" Chem\"[19531] (p=0.256, logit=20.500)",
+                "\" Doctor\"[19150] (p=0.121, logit=19.750)",
+                "\" pharmacist\"[90394] (p=0.073, logit=19.250)",
+                "\" Scientist\"[68409] (p=0.024, logit=18.125)",
+                "\" chem\"[8590] (p=0.019, logit=17.875)",
+                "\" Pharmaceutical\"[59373] (p=0.005, logit=16.500)",
+                "\" Pharmac\"[71881] (p=0.004, logit=16.250)",
+                "\" scientist\"[28568] (p=0.003, logit=16.125)",
+                "\" they\"[814] (p=0.002, logit=15.812)",
+                "\" Bio\"[24432] (p=0.002, logit=15.562)",
+                "\" Research\"[8483] (p=0.002, logit=15.375)",
+                "\" pharmaceutical\"[35410] (p=0.001, logit=15.125)",
+                "\" doctor\"[10896] (p=0.001, logit=15.062)",
+                "\" bio\"[17332] (p=0.001, logit=14.688)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Katarzyna Nowak",
+                "Erik Andersson"
+            ],
+            "target": "veterinarian",
+            "connection": "Veter",
+            "next_tok_probs": [
+                "\" Veter\"[26829] (p=0.750, logit=22.500)",
+                "\" Doctor\"[19150] (p=0.167, logit=21.000)",
+                "\" veterinarian\"[82340] (p=0.062, logit=20.000)",
+                "\" Veterinary\"[78103] (p=0.006, logit=17.750)",
+                "\" Vet\"[81440] (p=0.006, logit=17.750)",
+                "\" doctor\"[10896] (p=0.002, logit=16.750)",
+                "\" vet\"[24195] (p=0.002, logit=16.625)",
+                "\" veterinary\"[69340] (p=0.001, logit=15.500)",
+                "\" Animal\"[21995] (p=0.000, logit=15.000)",
+                "\" [\"[510] (p=0.000, logit=14.625)",
+                "\" Medical\"[13235] (p=0.000, logit=14.438)",
+                "\" animal\"[10065] (p=0.000, logit=14.375)",
+                "\" veterin\"[61671] (p=0.000, logit=14.375)",
+                "\" they\"[814] (p=0.000, logit=14.250)",
+                "\" Bi\"[12371] (p=0.000, logit=14.000)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Erik Andersson",
+                "Katarzyna Nowak"
+            ],
+            "target": "veterinarian",
+            "connection": "Veter",
+            "next_tok_probs": [
+                "\" Veter\"[26829] (p=0.758, logit=21.750)",
+                "\" Doctor\"[19150] (p=0.169, logit=20.250)",
+                "\" veterinarian\"[82340] (p=0.048, logit=19.000)",
+                "\" Vet\"[81440] (p=0.007, logit=17.125)",
+                "\" Veterinary\"[78103] (p=0.007, logit=17.000)",
+                "\" doctor\"[10896] (p=0.002, logit=15.875)",
+                "\" vet\"[24195] (p=0.002, logit=15.625)",
+                "\" veterin\"[61671] (p=0.001, logit=14.812)",
+                "\" Animal\"[21995] (p=0.001, logit=14.812)",
+                "\" they\"[814] (p=0.001, logit=14.688)",
+                "\" veterinary\"[69340] (p=0.001, logit=14.562)",
+                "\" Medical\"[13235] (p=0.000, logit=14.375)",
+                "\" [\"[510] (p=0.000, logit=14.188)",
+                "\" animal\"[10065] (p=0.000, logit=14.000)",
+                "\" Bi\"[12371] (p=0.000, logit=13.875)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Somchai Jaidee",
+                "Jan de Vries"
+            ],
+            "target": "psychologist",
+            "connection": "Psych",
+            "next_tok_probs": [
+                "\" Psych\"[17680] (p=0.613, logit=20.875)",
+                "\" Professor\"[17054] (p=0.083, logit=18.875)",
+                "\" psychologist\"[54595] (p=0.083, logit=18.875)",
+                "\" Doctor\"[19150] (p=0.083, logit=18.875)",
+                "\" Research\"[8483] (p=0.064, logit=18.625)",
+                "\" Academic\"[42170] (p=0.021, logit=17.500)",
+                "\" researcher\"[32185] (p=0.014, logit=17.125)",
+                "\" academic\"[14584] (p=0.008, logit=16.500)",
+                "\" Psychology\"[36673] (p=0.007, logit=16.375)",
+                "\" professor\"[14561] (p=0.007, logit=16.375)",
+                "\" they\"[814] (p=0.002, logit=14.938)",
+                "\" Scholar\"[25542] (p=0.001, logit=14.375)",
+                "\" psychologists\"[74191] (p=0.001, logit=14.375)",
+                "\" Scientist\"[68409] (p=0.001, logit=14.312)",
+                "\" Lect\"[42043] (p=0.001, logit=14.312)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Jan de Vries",
+                "Somchai Jaidee"
+            ],
+            "target": "psychologist",
+            "connection": "Psych",
+            "next_tok_probs": [
+                "\" Psych\"[17680] (p=0.738, logit=21.500)",
+                "\" Research\"[8483] (p=0.088, logit=19.375)",
+                "\" Doctor\"[19150] (p=0.078, logit=19.250)",
+                "\" psychologist\"[54595] (p=0.047, logit=18.750)",
+                "\" Professor\"[17054] (p=0.015, logit=17.625)",
+                "\" researcher\"[32185] (p=0.011, logit=17.250)",
+                "\" Academic\"[42170] (p=0.004, logit=16.375)",
+                "\" Psychology\"[36673] (p=0.003, logit=15.938)",
+                "\" academic\"[14584] (p=0.002, logit=15.312)",
+                "\" they\"[814] (p=0.001, logit=15.188)",
+                "\" Scientist\"[68409] (p=0.001, logit=15.125)",
+                "\" professor\"[14561] (p=0.001, logit=14.688)",
+                "\" research\"[3495] (p=0.001, logit=14.250)",
+                "\" doctor\"[10896] (p=0.000, logit=14.125)",
+                "\" Scholar\"[25542] (p=0.000, logit=14.000)"
+            ]
+        },
+        {
+            "query_entities": [
+                "David Thompson",
+                "Alexandru Popescu"
+            ],
+            "target": "environmental scientist",
+            "connection": "Environmental",
+            "next_tok_probs": [
+                "\" Environmental\"[25027] (p=0.645, logit=19.750)",
+                "\" Professor\"[17054] (p=0.077, logit=17.625)",
+                "\" environmental\"[12434] (p=0.077, logit=17.625)",
+                "\" Scientist\"[68409] (p=0.047, logit=17.125)",
+                "\" Research\"[8483] (p=0.041, logit=17.000)",
+                "\" Doctor\"[19150] (p=0.036, logit=16.875)",
+                "\" scientist\"[28568] (p=0.010, logit=15.625)",
+                "\" Ec\"[37211] (p=0.008, logit=15.312)",
+                "\" researcher\"[32185] (p=0.008, logit=15.312)",
+                "\" professor\"[14561] (p=0.007, logit=15.250)",
+                "\" Environment\"[11847] (p=0.004, logit=14.750)",
+                "\" Academic\"[42170] (p=0.004, logit=14.688)",
+                "\" Bi\"[12371] (p=0.003, logit=14.500)",
+                "\" ec\"[12208] (p=0.003, logit=14.375)",
+                "\" Ge\"[4323] (p=0.003, logit=14.250)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Alexandru Popescu",
+                "David Thompson"
+            ],
+            "target": "environmental scientist",
+            "connection": "Environmental",
+            "next_tok_probs": [
+                "\" Environmental\"[25027] (p=0.664, logit=19.750)",
+                "\" Professor\"[17054] (p=0.070, logit=17.500)",
+                "\" environmental\"[12434] (p=0.070, logit=17.500)",
+                "\" Scientist\"[68409] (p=0.048, logit=17.125)",
+                "\" Research\"[8483] (p=0.048, logit=17.125)",
+                "\" Doctor\"[19150] (p=0.026, logit=16.500)",
+                "\" researcher\"[32185] (p=0.014, logit=15.875)",
+                "\" scientist\"[28568] (p=0.012, logit=15.750)",
+                "\" professor\"[14561] (p=0.008, logit=15.312)",
+                "\" Ec\"[37211] (p=0.008, logit=15.312)",
+                "\" Environment\"[11847] (p=0.004, logit=14.688)",
+                "\" Academic\"[42170] (p=0.003, logit=14.438)",
+                "\" ec\"[12208] (p=0.003, logit=14.188)",
+                "\" they\"[814] (p=0.003, logit=14.188)",
+                "\" Bi\"[12371] (p=0.002, logit=13.750)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Fatima Alaoui",
+                "Ole Hansen"
+            ],
+            "target": "financial advisor",
+            "connection": "Financial",
+            "next_tok_probs": [
+                "\" Financial\"[17961] (p=0.930, logit=21.625)",
+                "\" Economist\"[84038] (p=0.028, logit=18.125)",
+                "\" financial\"[6020] (p=0.019, logit=17.750)",
+                "\" Finance\"[23261] (p=0.003, logit=16.000)",
+                "\" Doctor\"[19150] (p=0.003, logit=15.938)",
+                "\" Advisor\"[54432] (p=0.002, logit=15.500)",
+                "\" Fin\"[5767] (p=0.001, logit=15.000)",
+                "\" Investment\"[33350] (p=0.001, logit=14.875)",
+                "\" Bank\"[8715] (p=0.001, logit=14.875)",
+                "\" economist\"[46215] (p=0.001, logit=14.562)",
+                "\" they\"[814] (p=0.001, logit=14.562)",
+                "\" Economic\"[23362] (p=0.001, logit=14.562)",
+                "\" Wealth\"[60841] (p=0.001, logit=14.500)",
+                "\" Investor\"[76812] (p=0.001, logit=14.312)",
+                "\" Analyst\"[41570] (p=0.001, logit=14.188)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Ole Hansen",
+                "Fatima Alaoui"
+            ],
+            "target": "financial advisor",
+            "connection": "Financial",
+            "next_tok_probs": [
+                "\" Financial\"[17961] (p=0.941, logit=20.875)",
+                "\" financial\"[6020] (p=0.028, logit=17.375)",
+                "\" Economist\"[84038] (p=0.004, logit=15.438)",
+                "\" Finance\"[23261] (p=0.003, logit=15.188)",
+                "\" Doctor\"[19150] (p=0.003, logit=15.062)",
+                "\" Fin\"[5767] (p=0.002, logit=14.875)",
+                "\" Advisor\"[54432] (p=0.002, logit=14.562)",
+                "\" they\"[814] (p=0.001, logit=14.375)",
+                "\" Investment\"[33350] (p=0.001, logit=14.250)",
+                "\" Bank\"[8715] (p=0.001, logit=13.875)",
+                "\" Wealth\"[60841] (p=0.001, logit=13.438)",
+                "\" Consultant\"[56546] (p=0.001, logit=13.438)",
+                "\" Mortgage\"[48780] (p=0.001, logit=13.375)",
+                "\" Broker\"[53801] (p=0.000, logit=13.188)",
+                "\" investment\"[9341] (p=0.000, logit=13.000)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Jack Wilson",
+                "Ant\u00f3nio Costa"
+            ],
+            "target": "software engineer",
+            "connection": "Software",
+            "next_tok_probs": [
+                "\" Software\"[4476] (p=0.547, logit=19.875)",
+                "\" Developer\"[25922] (p=0.228, logit=19.000)",
+                "\" Engineer\"[29483] (p=0.107, logit=18.250)",
+                "\" software\"[3241] (p=0.040, logit=17.250)",
+                "\" Programmer\"[89124] (p=0.016, logit=16.375)",
+                "\" programmer\"[48888] (p=0.016, logit=16.375)",
+                "\" developer\"[16131] (p=0.015, logit=16.250)",
+                "\" engineer\"[24490] (p=0.006, logit=15.438)",
+                "\" Doctor\"[19150] (p=0.004, logit=14.875)",
+                "\" IT\"[8871] (p=0.002, logit=14.375)",
+                "\" Computer\"[17863] (p=0.001, logit=13.812)",
+                "\" Tech\"[17829] (p=0.001, logit=13.750)",
+                "\" they\"[814] (p=0.001, logit=13.688)",
+                "\" Soccer\"[38633] (p=0.001, logit=13.438)",
+                "\" Data\"[2956] (p=0.001, logit=13.250)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Ant\u00f3nio Costa",
+                "Jack Wilson"
+            ],
+            "target": "software engineer",
+            "connection": "Software",
+            "next_tok_probs": [
+                "\" Software\"[4476] (p=0.400, logit=19.000)",
+                "\" Developer\"[25922] (p=0.400, logit=19.000)",
+                "\" Engineer\"[29483] (p=0.054, logit=17.000)",
+                "\" software\"[3241] (p=0.048, logit=16.875)",
+                "\" developer\"[16131] (p=0.029, logit=16.375)",
+                "\" programmer\"[48888] (p=0.019, logit=15.938)",
+                "\" Programmer\"[89124] (p=0.014, logit=15.625)",
+                "\" engineer\"[24490] (p=0.004, logit=14.500)",
+                "\" Doctor\"[19150] (p=0.003, logit=13.938)",
+                "\" IT\"[8871] (p=0.002, logit=13.875)",
+                "\" they\"[814] (p=0.002, logit=13.500)",
+                "\" Tech\"[17829] (p=0.002, logit=13.438)",
+                "\" Computer\"[17863] (p=0.001, logit=13.062)",
+                "\" coder\"[84642] (p=0.001, logit=12.938)",
+                "\" [\"[510] (p=0.001, logit=12.938)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Emma Taylor",
+                "Elena Georgiou"
+            ],
+            "target": "professor",
+            "connection": "Professor",
+            "next_tok_probs": [
+                "\" Professor\"[17054] (p=0.887, logit=23.750)",
+                "\" professor\"[14561] (p=0.050, logit=20.875)",
+                "\" Academic\"[42170] (p=0.044, logit=20.750)",
+                "\" academic\"[14584] (p=0.010, logit=19.250)",
+                "\" University\"[3907] (p=0.003, logit=18.000)",
+                "\" Scholar\"[25542] (p=0.001, logit=17.125)",
+                "\" Doctor\"[19150] (p=0.001, logit=16.750)",
+                "\" Environmental\"[25027] (p=0.001, logit=16.750)",
+                "\" Educ\"[10355] (p=0.001, logit=16.750)",
+                "\" Prof\"[8626] (p=0.001, logit=16.750)",
+                "\" professors\"[45724] (p=0.000, logit=16.125)",
+                "\" Teacher\"[30169] (p=0.000, logit=16.125)",
+                "\" university\"[12374] (p=0.000, logit=16.000)",
+                "\" scholar\"[18640] (p=0.000, logit=15.750)",
+                "\" Acad\"[12644] (p=0.000, logit=15.625)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Elena Georgiou",
+                "Emma Taylor"
+            ],
+            "target": "professor",
+            "connection": "Professor",
+            "next_tok_probs": [
+                "\" Professor\"[17054] (p=0.891, logit=24.250)",
+                "\" professor\"[14561] (p=0.050, logit=21.375)",
+                "\" Academic\"[42170] (p=0.039, logit=21.125)",
+                "\" academic\"[14584] (p=0.009, logit=19.625)",
+                "\" University\"[3907] (p=0.003, logit=18.375)",
+                "\" Scholar\"[25542] (p=0.002, logit=18.125)",
+                "\" Environmental\"[25027] (p=0.001, logit=17.625)",
+                "\" Educ\"[10355] (p=0.001, logit=17.500)",
+                "\" Prof\"[8626] (p=0.001, logit=17.125)",
+                "\" scholar\"[18640] (p=0.000, logit=16.625)",
+                "\" professors\"[45724] (p=0.000, logit=16.500)",
+                "\" Research\"[8483] (p=0.000, logit=16.375)",
+                "\" Scientist\"[68409] (p=0.000, logit=16.375)",
+                "\" university\"[12374] (p=0.000, logit=16.250)",
+                "\" Chem\"[19531] (p=0.000, logit=16.125)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Jose Cruz",
+                "Pablo Garcia"
+            ],
+            "target": "biochemist",
+            "connection": "Bio",
+            "next_tok_probs": [
+                "\" Bio\"[24432] (p=0.218, logit=18.250)",
+                "\" Chem\"[19531] (p=0.192, logit=18.125)",
+                "\" Scientist\"[68409] (p=0.149, logit=17.875)",
+                "\" Doctor\"[19150] (p=0.132, logit=17.750)",
+                "\" bio\"[17332] (p=0.080, logit=17.250)",
+                "\" Professor\"[17054] (p=0.055, logit=16.875)",
+                "\" Research\"[8483] (p=0.055, logit=16.875)",
+                "\" scientist\"[28568] (p=0.029, logit=16.250)",
+                "\" chem\"[8590] (p=0.029, logit=16.250)",
+                "\" researcher\"[32185] (p=0.019, logit=15.812)",
+                "\" Bi\"[12371] (p=0.011, logit=15.250)",
+                "\" professor\"[14561] (p=0.003, logit=14.000)",
+                "\" Academic\"[42170] (p=0.002, logit=13.438)",
+                "\" Chemistry\"[42846] (p=0.001, logit=12.812)",
+                "\" research\"[3495] (p=0.001, logit=12.750)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Isabel Ferreira",
+                "Ingrid Olsen"
+            ],
+            "target": "dentist",
+            "connection": "Dent",
+            "next_tok_probs": [
+                "\" Dent\"[43911] (p=0.582, logit=23.500)",
+                "\" Doctor\"[19150] (p=0.400, logit=23.125)",
+                "\" dentist\"[50351] (p=0.016, logit=19.875)",
+                "\" doctor\"[10896] (p=0.001, logit=17.250)",
+                "\" Dental\"[48804] (p=0.000, logit=16.250)",
+                "\" they\"[814] (p=0.000, logit=15.812)",
+                "\" [\"[510] (p=0.000, logit=15.250)",
+                "\" Medical\"[13235] (p=0.000, logit=15.125)",
+                "\" Physician\"[88298] (p=0.000, logit=14.750)",
+                "\" medical\"[6593] (p=0.000, logit=14.312)",
+                "\" dental\"[29106] (p=0.000, logit=14.000)",
+                "\" Veter\"[26829] (p=0.000, logit=13.875)",
+                "\" Surge\"[57257] (p=0.000, logit=13.875)",
+                "\" Artist\"[29459] (p=0.000, logit=13.812)",
+                "\"Doctor\"[43824] (p=0.000, logit=13.750)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Ingrid Olsen",
+                "Isabel Ferreira"
+            ],
+            "target": "dentist",
+            "connection": "Dent",
+            "next_tok_probs": [
+                "\" Dent\"[43911] (p=0.574, logit=22.125)",
+                "\" Doctor\"[19150] (p=0.395, logit=21.750)",
+                "\" dentist\"[50351] (p=0.025, logit=19.000)",
+                "\" doctor\"[10896] (p=0.002, logit=16.250)",
+                "\" Dental\"[48804] (p=0.001, logit=16.000)",
+                "\" they\"[814] (p=0.001, logit=15.750)",
+                "\" [\"[510] (p=0.000, logit=14.562)",
+                "\" Medical\"[13235] (p=0.000, logit=14.438)",
+                "\" dental\"[29106] (p=0.000, logit=14.062)",
+                "\" medical\"[6593] (p=0.000, logit=13.625)",
+                "\" Artist\"[29459] (p=0.000, logit=13.500)",
+                "\" Surge\"[57257] (p=0.000, logit=13.312)",
+                "\" Healthcare\"[39435] (p=0.000, logit=13.188)",
+                "\" Orth\"[32210] (p=0.000, logit=13.188)",
+                "\" Physician\"[88298] (p=0.000, logit=13.188)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Jennifer Davis",
+                "James Mitchell"
+            ],
+            "target": "journalist",
+            "connection": "Journal",
+            "next_tok_probs": [
+                "\" Journal\"[10139] (p=0.844, logit=19.875)",
+                "\" journalist\"[23672] (p=0.069, logit=17.375)",
+                "\" Doctor\"[19150] (p=0.026, logit=16.375)",
+                "\" Reporter\"[48081] (p=0.011, logit=15.562)",
+                "\" Author\"[7030] (p=0.006, logit=15.000)",
+                "\" Photographer\"[75839] (p=0.006, logit=15.000)",
+                "\" Writer\"[30504] (p=0.005, logit=14.812)",
+                "\" Lawyer\"[71314] (p=0.002, logit=13.562)",
+                "\" Editor\"[12865] (p=0.001, logit=13.438)",
+                "\" Engineer\"[29483] (p=0.001, logit=13.375)",
+                "\" they\"[814] (p=0.001, logit=13.375)",
+                "\" author\"[3229] (p=0.001, logit=13.312)",
+                "\" writer\"[7061] (p=0.001, logit=13.250)",
+                "\" Professor\"[17054] (p=0.001, logit=13.062)",
+                "\" reporter\"[19496] (p=0.001, logit=12.938)"
+            ]
+        },
+        {
+            "query_entities": [
+                "James Mitchell",
+                "Jennifer Davis"
+            ],
+            "target": "journalist",
+            "connection": "Journal",
+            "next_tok_probs": [
+                "\" Journal\"[10139] (p=0.770, logit=18.875)",
+                "\" journalist\"[23672] (p=0.056, logit=16.250)",
+                "\" Doctor\"[19150] (p=0.056, logit=16.250)",
+                "\" Reporter\"[48081] (p=0.022, logit=15.312)",
+                "\" Photographer\"[75839] (p=0.015, logit=14.938)",
+                "\" Engineer\"[29483] (p=0.007, logit=14.188)",
+                "\" Teacher\"[30169] (p=0.006, logit=13.938)",
+                "\" Professor\"[17054] (p=0.004, logit=13.625)",
+                "\" Writer\"[30504] (p=0.004, logit=13.562)",
+                "\" they\"[814] (p=0.003, logit=13.312)",
+                "\" Architect\"[24979] (p=0.003, logit=13.250)",
+                "\" Author\"[7030] (p=0.003, logit=13.250)",
+                "\" Lawyer\"[71314] (p=0.003, logit=13.250)",
+                "\" Designer\"[15940] (p=0.002, logit=13.125)",
+                "\" Editor\"[12865] (p=0.002, logit=12.812)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Laura Fernandez",
+                "Ivan Petrov"
+            ],
+            "target": "statistician",
+            "connection": "Stat",
+            "next_tok_probs": [
+                "\" Stat\"[12442] (p=0.520, logit=20.875)",
+                "\" Mathematic\"[72140] (p=0.191, logit=19.875)",
+                "\" statistic\"[43589] (p=0.090, logit=19.125)",
+                "\" Professor\"[17054] (p=0.055, logit=18.625)",
+                "\" Data\"[2956] (p=0.033, logit=18.125)",
+                "\" Academic\"[42170] (p=0.029, logit=18.000)",
+                "\" Research\"[8483] (p=0.018, logit=17.500)",
+                "\" mathematic\"[21651] (p=0.016, logit=17.375)",
+                "\" Doctor\"[19150] (p=0.008, logit=16.750)",
+                "\" academic\"[14584] (p=0.006, logit=16.375)",
+                "\" professor\"[14561] (p=0.004, logit=16.000)",
+                "\" researcher\"[32185] (p=0.004, logit=16.000)",
+                "\" data\"[828] (p=0.004, logit=15.938)",
+                "\" Scientist\"[68409] (p=0.003, logit=15.875)",
+                "\" Math\"[4242] (p=0.003, logit=15.625)"
+            ]
+        },
+        {
+            "query_entities": [
+                "Ivan Petrov",
+                "Laura Fernandez"
+            ],
+            "target": "statistician",
+            "connection": "Stat",
+            "next_tok_probs": [
+                "\" Stat\"[12442] (p=0.443, logit=20.750)",
+                "\" Professor\"[17054] (p=0.163, logit=19.750)",
+                "\" Mathematic\"[72140] (p=0.099, logit=19.250)",
+                "\" statistic\"[43589] (p=0.068, logit=18.875)",
+                "\" Academic\"[42170] (p=0.060, logit=18.750)",
+                "\" Data\"[2956] (p=0.053, logit=18.625)",
+                "\" Research\"[8483] (p=0.036, logit=18.250)",
+                "\" Doctor\"[19150] (p=0.012, logit=17.125)",
+                "\" academic\"[14584] (p=0.010, logit=17.000)",
+                "\" professor\"[14561] (p=0.010, logit=17.000)",
+                "\" mathematic\"[21651] (p=0.009, logit=16.875)",
+                "\" researcher\"[32185] (p=0.006, logit=16.500)",
+                "\" data\"[828] (p=0.005, logit=16.250)",
+                "\" Scientist\"[68409] (p=0.004, logit=16.000)",
+                "\" Analyst\"[41570] (p=0.002, logit=15.562)"
+            ]
+        }
+    ]
 }

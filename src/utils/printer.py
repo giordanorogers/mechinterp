@@ -13,9 +13,3 @@ def printer(variable):
         print(f"{var_name}: {variable}")
     else:
         print(f"unknown: {variable}")
-
-# Usage:
-x = 42
-y = "hello"
-printer(x)  # Output: x: 42
-printer(y)  # Output: y: hello

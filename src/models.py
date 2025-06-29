@@ -208,12 +208,12 @@ def bytes_to_human_readable(
 
 
 def get_full_model_path(model_name: str) -> str:
-    full_path = os.path.join(DEFAULT_MODELS_DIR, model_name)
+    full_path = os.path.join("models/", model_name)
     if os.path.exists(full_path):
         return full_path
     else:
         logger.warning(
-            f"""{model_name} not found in {DEFAULT_MODELS_DIR}
+            f"""{model_name} not found in {"models/"}
 If not found in cache, model will be downloaded from HuggingFace to cache directory"""
         )
         return model_name

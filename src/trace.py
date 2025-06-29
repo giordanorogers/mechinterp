@@ -19,6 +19,7 @@ def patched_run(
     inputs: TokenizerOutput,
     states: dict[tuple[str, int], torch.Tensor],
 ) -> torch.Tensor:
+    # Enter a tracing context
     with mt.trace(inputs, scan=False) as trace:
         for location in states:
             layer_name, token_idx = location

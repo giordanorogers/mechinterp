@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 def get_connection_on_entity_pair(
     mt: ModelandTokenizer,
-    entities: tuple[str],
+    entities: tuple[str, str],
     prefix_generator: BiAssociationPrefix,
     n_valid=6,
     n_none=2,

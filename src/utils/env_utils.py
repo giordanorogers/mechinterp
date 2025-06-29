@@ -22,8 +22,8 @@ try:
     PROJECT_ROOT = "/".join(os.path.dirname(os.path.abspath(__file__)).split("/")[:-2])
     with open(os.path.join(PROJECT_ROOT, "env.yml"), "r") as f:
         config = yaml.safe_load(f)
-        DEFAULT_MODELS_DIR = config["MODEL_DIR"]
-        DEFAULT_DATA_DIR = os.path.join(PROJECT_ROOT, config["DATA_DIR"])
+        DEFAULT_MODELS_DIR = "models/"#config["MODEL_DIR"]
+        DEFAULT_DATA_DIR = "data_save/"#os.path.join(PROJECT_ROOT, config["DATA_DIR"])
         DEFAULT_RESULTS_DIR = os.path.join(PROJECT_ROOT, config["RESULTS_DIR"])
         DEFAULT_HPARAMS_DIR = os.path.join(PROJECT_ROOT, config["HPARAMS_DIR"])
         GPT_4O_CACHE_DIR = os.path.join(PROJECT_ROOT, config["GPT4O_CACHE_DIR"])

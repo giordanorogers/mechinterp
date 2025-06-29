@@ -1,5 +1,8 @@
 import os
+import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.express as px
+import plotly.graph_objects as go
 from typing import Optional, Literal
 from src.trace import CausalTracingResult
 
@@ -109,3 +112,25 @@ def plot_trace_heatmap(
             os.makedirs(os.path.dirname(savepdf), exist_ok=True)
             plt.savefig(savepdf, bbox_inches="tight", dpi=300)
         plt.show()
+
+def plot_layer_attributions(attributions: pd.DataFrame, title: str = "Per-Layer Logit Contribution") -> go.Figure:
+    """
+    Generates a bar chart of logit contributions aggregated by layer.
+
+    Args:
+        attributions: A DataFrame with 'layer' and 'contribution' columns.
+        title: The title for the plot.
+
+    Returns:
+        A plotly Figure object.
+    """
+    # Aggregate contributions by layer
+    layer_contribs = attributions.groupby('layer')['contribution'].sum().reset_index()
+
+    fig = px.bar(
+        layer_contribs,
+        x='layer',
+        y='contribution',
+        title=title
+    )
+    return fig

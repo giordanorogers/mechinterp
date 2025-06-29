@@ -1,3 +1,4 @@
+import logging
 import copy
 import string
 import gc
@@ -5,12 +6,14 @@ import torch
 from dataclasses import dataclass
 from typing import Union, Optional, Literal, Any
 from src.models import ModelandTokenizer, unwrap_tokenizer
-from src.tokens import prepare_input
+from src.tokens import prepare_input, find_token_range
 from src.utils.printer import printer
 from src.utils.typing import (
     ArrayLike, Tokenizer, TokenizerOutput, PredictedToken
 )
 from nltk.corpus import stopwords
+
+logger = logging.getLogger(__name__)
 
 def free_gpu_cache():
     gc.collect()
@@ -114,6 +117,7 @@ class PatchSpec:
     location: tuple[str, int]
     patch: torch.Tensor
     clean: Optional[torch.Tensor] = None
+    strategy: Literal["replace", "add"] = "replace"
 
 def normalize_token_of_interest(token_of_interest, num_inputs):
     """
@@ -369,6 +373,116 @@ def is_nontrivial_prefix(prediction: str, target: str) -> bool:
 def get_tick_marker(value: bool) -> str:
     """Returns a tick or cross marker depending on the value."""
     return "✓" if value else "✗"
+
+@torch.inference_mode()
+def patchscope(
+    mt: ModelandTokenizer,
+    h: torch.Tensor,
+    context: str | None = None,
+    placeholder: str = "x",
+    context_tokenized: TokenizerOutput | None = None,
+    placeholder_idx: int | None = None,
+    patch_layers: Optional[list[str]] = None,
+    return_logits: bool = False,
+    add_orig_latent_to: str | None = None,
+    **interpret_kwargs,
+) -> (
+    list[PredictedToken]
+    | tuple[list[PredictedToken], dict[int, tuple[int, PredictedToken]]]
+):
+    if context is None and context_tokenized is None:
+        phrases = [
+            " copy",
+            " Cat",
+            " Java",
+            " transistor",
+            " python",
+            " Leonardo DiCaprio",
+            " The Lion King",
+            " Washington D.C.",
+            " Mount Everest",
+            " computer",
+        ]
+        context = "\n".join([f"{p} > {p}" for p in phrases])
+        context = f"{context}\n {placeholder} >"
+        logger.debug(context)
+
+    if context_tokenized is None:
+        context_tokenized = prepare_input(
+            tokenizer=mt,
+            prompts=context,
+            return_offsets_mapping=True,
+        )
+
+    elif context is None:
+        context = mt.tokenizer.decode(
+            context_tokenized["input_ids"][0], skip_special_tokens=True
+        )
+        logger.debug(f"context: {context}")
+
+    if placeholder_idx is None:
+        placeholder_range = find_token_range(
+            string=context,
+            substring=placeholder,
+            tokenizer=mt.tokenizer,
+            occurrence=-1,
+            offset_mapping=(
+                context_tokenized["offset_mapping"][0]
+                if "offset_mapping" in context_tokenized
+                else None
+            ),
+        )
+        placeholder_idx = placeholder_range[1] - 1
+
+    if "offset_mapping" in context_tokenized:
+        context_tokenized.pop("offset_mapping")
+
+    placeholder_ends = mt.tokenizer.decode(
+        context_tokenized["input_ids"][0, placeholder_idx]
+    )
+    if placeholder.strip().endswith(placeholder_ends) is False:
+        logger.warning(
+            f"{placeholder=} does not end with {placeholder_ends=} | {placeholder_idx=}"
+        )
+
+    patch_layers = (
+        [mt.layer_name_format.format(5)] if patch_layers is None else patch_layers
+    )
+    patches = [
+        PatchSpec(
+            location=(layer_name, placeholder_idx),
+            patch=h,
+            clean=None,
+            strategy="replace",
+        )
+        for layer_name in patch_layers
+    ]
+    if add_orig_latent_to is not None:
+        patches.append(
+            PatchSpec(
+                location=(add_orig_latent_to, placeholder_idx),
+                patch=h,
+                clean=None,
+                strategy="add",
+            )
+        )
+    
+    logits = get_hs(
+        mt=mt,
+        input=context_tokenized,
+        locations=[(mt.lm_head_name, -1)],
+        patches=patches,
+        return_dict=False,
+    )
+    pred = interpret_logits(
+        tokenizer=mt,
+        logits=logits,
+        **interpret_kwargs
+    )
+
+    if return_logits:
+        return logits, pred
+    return pred
 
 def untuple(object: Any):
     if isinstance(object, tuple) or (
