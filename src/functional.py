@@ -223,6 +223,7 @@ def predict_next_token(
     batch_size: int = 8,
     # Set a token of interest as [input, token_num], or a list of [input, token_num]'s
     token_of_interest: Optional[Union[Union[str, int], list[Union[str, int]]]] = None,
+    preds_of_interest: list[int] = None,
     patches: Optional[PatchSpec | list[PatchSpec]] = None,
 ):
     """ Predict the next token(s) given the input. """
@@ -272,7 +273,16 @@ def predict_next_token(
         batch_probs = batch_logits.float().softmax(dim=-1)
         batch_topk = batch_probs.topk(k=k, dim=-1)
 
+        interested_preds_info = None
+        if preds_of_interest is not None:
+            # Select the logits and probabilities for the specified token indices
+            preds_tensor = torch.tensor(preds_of_interest, device=batch_logits.device, dtype=torch.long)
+            interested_logits = batch_logits[:, preds_tensor]
+            interested_probs = batch_probs[:, preds_tensor]
+            interested_preds_info = (interested_logits, interested_probs)
+
         # TODO: Add token of interest logic.
+
 
         for batch_order, (token_ids, token_probs) in enumerate(
             zip(batch_topk.indices, batch_topk.values)
@@ -287,6 +297,29 @@ def predict_next_token(
                 #    else []
                 #),
             )
+
+            if interested_preds_info is not None:
+                item_logits = interested_preds_info[0][batch_order]
+                item_probs = interested_preds_info[1][batch_order]
+
+                if type(top_pred) == list:
+                    top_pred.append({
+                        mt.tokenizer.decode(token_id): {
+                            'logit': logit.item(),
+                            'prob': prob.item(),
+                            'token_id': token_id,
+                        }
+                        for token_id, logit, prob in zip(preds_of_interest, item_logits, item_probs)
+                    })
+                elif type(top_pred) == dict:
+                    top_pred['preds_of_interest'] = {
+                        mt.tokenizer.decode(token_id): {
+                            'logit': logit.item(),
+                            'prob': prob.item(),
+                            'token_id': token_id,
+                        }
+                        for token_id, logit, prob in zip(preds_of_interest, item_logits, item_probs)
+                    }
 
             # TODO: Add token of interest logic
 

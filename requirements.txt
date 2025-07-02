@@ -20,3 +20,4 @@ dataclasses-json
 matplotlib
 nltk
 wandb
+python-dotenv
