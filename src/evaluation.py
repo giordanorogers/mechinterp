@@ -1,7 +1,7 @@
 import logging
 from src.models import ModelandTokenizer
 from src.functional import predict_next_token
-from src.probing.prompt import BiAssociationPrefix, prepare_probing_input
+from src.probing.prompt import BiAssociationPrefix, prepare_probing_input, prepare_choice_input
 from src.probing.utils import get_lm_generated_answer
 
 logger = logging.getLogger(__name__)
@@ -45,5 +45,32 @@ def get_connection_on_entity_pair(
                 "Next token probs are not meaningful for reasoning LMs. Will decode to <think> token always"
             )
             return answer, None
+
+    return answer
+
+def get_choice(
+    mt: ModelandTokenizer,
+    clean_entity: str,
+    common_entities: list[str],
+    prompt_template: str,
+    return_next_token_probs = True,
+):
+    choice_prompt = prepare_choice_input(
+        mt=mt,
+        clean_entity=clean_entity,
+        common_entities=common_entities,
+        prompt_template=prompt_template,
+    )
+
+    answer = get_lm_generated_answer(
+        mt=mt,
+        prompt=choice_prompt
+    )
+    answer = answer.split("\n")[0]
+
+    if return_next_token_probs:
+        return answer, predict_next_token(
+            mt=mt, inputs=choice_prompt.prompt, k=5
+        )
 
     return answer

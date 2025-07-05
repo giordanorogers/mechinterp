@@ -158,7 +158,11 @@ def trace_important_states(
     )
 
     clean_input = aligned["clean_input"]
+    #print(f"{clean_input=}")
+    #print(f"{clean_input["input_ids"][0]=}")
+    print(f"Decoded clean input: {mt.tokenizer.decode(clean_input['input_ids'][0])}")
     patched_input = aligned["patched_input"]
+    print(f"Decoded patched input: {mt.tokenizer.decode(patched_input['input_ids'][0])}")
     subj_range = aligned["subj_range"]
     trace_start_idx = aligned["trace_start_idx"]
 
@@ -265,10 +269,12 @@ def trace_important_states(
     logger.debug(f"---------- tracing important states | {kind=} ----------")
 
     # Calculate indirect effects in the patched run
+    # Use minimum length to avoid KeyError when clean and patched inputs have different lengths
+    max_token_idx = min(clean_input.input_ids.size(1), patched_input.input_ids.size(1))
     locations = [
         (layer_idx, token_idx)
         for layer_idx in range(mt.n_layer)
-        for token_idx in range(trace_start_idx, clean_input.input_ids.size(1))
+        for token_idx in range(trace_start_idx, max_token_idx)
     ]
     indirect_effects = calculate_indirect_effects(
         mt=mt,
@@ -282,7 +288,7 @@ def trace_important_states(
     )
 
     indirect_effect_matrix = []
-    for token_idx in range(trace_start_idx, clean_input.input_ids.size(1)):
+    for token_idx in range(trace_start_idx, max_token_idx):
         indirect_effect_matrix.append(
             [
                 indirect_effects[(layer_idx, token_idx)]

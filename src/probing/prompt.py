@@ -18,6 +18,65 @@ class ProbingPrompt(DataClassJsonMixin):
     entity_ranges: tuple[tuple[int, int], tuple[int, int]]
     query_range: tuple[int, int]
 
+@dataclass(frozen=False)
+class ChoosingPrompt(DataClassJsonMixin):
+    prompt: str
+    clean_entity: str
+    common_entities: list[str]
+    model_key: str
+    tokenized: dict[str, torch.Tensor]
+    clean_entity_range: tuple[tuple[int, int], tuple[int, int]]
+    query_range: tuple[int, int]
+
+def prepare_choice_input(
+    mt: ModelandTokenizer,
+    clean_entity = str,
+    common_entities = list[str],
+    prompt_template = str,
+    answer_marker: str = "\nA:",
+    return_offsets_mapping: bool = False
+):
+    prompt = prompt_template.format(clean_entity, (", ".join(common_entities)))
+
+    tokenized = prepare_input(
+        prompts=prompt,
+        tokenizer=mt,
+        return_offsets_mapping=True
+    )
+    offset_mapping = tokenized["offset_mapping"][0]
+
+    clean_entity_range = find_token_range(
+        string=prompt,
+        substring=clean_entity,
+        tokenizer=mt,
+        offset_mapping=offset_mapping
+    )
+
+    query_len = prepare_input(
+        prompts=answer_marker, tokenizer=mt, add_special_tokens=False
+    )["input_ids"].shape[1]
+    query_range = (
+        tokenized.input_ids.shape[1] - query_len,
+        tokenized.input_ids.shape[1],
+    )
+
+    tokenized = dict(
+        input_ids=tokenized["input_ids"],
+        attention_mask=tokenized["attention_mask"],
+    )
+    if return_offsets_mapping:
+        tokenized["offset_mapping"] = [offset_mapping]
+
+    return ChoosingPrompt(
+        prompt=prompt,
+        clean_entity=clean_entity,
+        common_entities=common_entities,
+        model_key=mt.name.split("/")[-1],
+        tokenized=tokenized,
+        clean_entity_range=clean_entity_range,
+        query_range=query_range
+    )
+
 def prepare_probing_input(
     mt: ModelandTokenizer,
     entities: tuple[str, str],

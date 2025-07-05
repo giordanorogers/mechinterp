@@ -277,6 +277,8 @@ def align_patching_positions(
         occurrence=-1,
         offset_mapping=clean_input["offset_mapping"][0],
     )
+    print(f"{clean_subj_range=}")
+    
     patched_subj_range = find_token_range(
         string=prompt_template.format(patched_subj),
         substring=patched_subj,
@@ -284,6 +286,7 @@ def align_patching_positions(
         occurrence=-1,
         offset_mapping=patched_input["offset_mapping"][0],
     )
+    print(f"{patched_subj_range}")
 
     trace_start_idx = None
     if trace_start_marker is not None:

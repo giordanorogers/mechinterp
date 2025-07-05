@@ -13,3 +13,13 @@ class ActivationPatchingSamples(DataClassJsonMixin):
 
     def __str__(self):
         return f'{self.common_entity} | {self.clean_entity} => "{self.clean_answer}" | <-- | {self.patched_entity} => "{self.patched_answer}"'
+
+@dataclass
+class ActivationPatchingChoiceSamples(DataClassJsonMixin):
+    prompt_template: str
+    common_entities: list[str]
+    clean_entity: str
+    patched_entity: str
+    clean_answer: str | None = None
+    patched_answer: str | None = None
+    patched_answer_toks: list[int] | None = None
