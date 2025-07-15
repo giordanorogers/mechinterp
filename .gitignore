@@ -35,8 +35,15 @@ venv/
 env.yml
 
 # Data files (optional - uncomment if you don't want to track data)
-# data_save/
+data_save/probe/
 data/LLM_CACHE/
+notebooks/data/LLM_CACHE/
+**/LLM_CACHE/
+
+# Large notebooks
+notebooks/bi_association/information_flow.ipynb
+
+# Embedded repositories  
+hierarchy/LLM_Categorical_Hierarchical_Representations/
 
 # Other
-linear_probe.ipynb
