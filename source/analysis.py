@@ -1,9 +1,22 @@
+from collections import defaultdict
 from transformers.tokenization_utils_fast import PreTrainedTokenizerFast
 from typing import Optional, Literal
 from nnsight import LanguageModel
 import numpy as np
 from tqdm import trange
 import logging
+import torch
+from dataclasses import dataclass
+
+@dataclass
+class Prediction:
+    token_str: str
+    token_id: int
+    prob: float
+    logit: float
+
+    def __str__(self):
+        return f'"{self.token_str}"[{self.token_id}] (p={self.prob}, logit={self.logit})'
 
 logger = logging.getLogger(__name__)
 
@@ -11,32 +24,44 @@ def collect_activations(
     model: LanguageModel,
     prompt: str,
     kind: Optional[Literal["residual", "mlp", "attention"]] = "residual",
+    remote: bool = False,
+    trace_idx: int | None = None,
+    model_family: Optional[Literal["llama", "gpt"]] = "llama",
 ) -> list:
     """
-    Collect model activations.
+    Collect per-layer activations for a given component.
 
     Args:
         model: A NNSight Language Model object.
         prompt: The prompt to run the model on.
         kind: The kind of component to collect the activations of.
+        remote: Whether to run the model locally or remotely on NDIF.
+        trace_idx: The token position to collect activations at.
+            Defaults to all positions.
 
     Returns:
         np.array
     """
-    activations = []
-    num_layers = model.config.num_hidden_layers
+    components = {
+        "residual":  lambda layer: layer.output,
+        "mlp":       lambda layer: layer.mlp.output,
+        "attention": lambda layer: layer.self_attn.output
+    }
 
-    for l in trange(num_layers):
-        with model.trace(prompt):
-            if kind == "residual":
-                output = model.model.layers[l].output[0].save()
-                activations.append(output)
-            elif kind == "mlp":
-                output = model.model.layers[l].mlp.output[0].save()
-                activations.append(output)
-            elif kind == "attention":
-                output = model.model.layers[l].self_attn.output[0].save()
-                activations.append(output)
+    indexer = (0, trace_idx) if trace_idx is not None else (0,)
+
+    activations = []
+    
+    if model_family == "llama":
+        layers = model.model.layers
+    elif model_family == "gpt":
+        layers = model.transformer.h
+
+    with torch.no_grad():
+        with model.trace(prompt, remote=remote):
+            for layer in layers:
+                node = components[kind](layer)
+                activations.append(node[indexer].save())
     
     return activations
 
@@ -109,64 +134,55 @@ def logit_lens(
     k: int = 5,
     return_logits: bool = False
 ):
+    """ Warning: Only supports llama models! """
     logit_lens = []
     num_layers = model.config.num_hidden_layers
 
     if kind == "last":
         logits_probs = []
-        with model.trace(prompt):
-            logits = model.output.logits[0].save()
-            probs = logits.softmax(dim=-1).save()
-            logits_probs.append((logits, probs))
+        with torch.no_grad():
+            with model.trace(prompt):
+                logits = model.output.logits[0].save()
+                probs = logits.softmax(dim=-1).save()
+                logits_probs.append((logits, probs))
         logits = logits_probs[0][0][-1].topk(k=k).values
         probs = logits_probs[0][1][-1].topk(k=k).values
         token_ids = logits_probs[0][1][-1].topk(k=k).indices
         tokens = [model.tokenizer.decode(id) for id in token_ids]
 
         for t, l, p, id in zip(tokens, logits, probs, token_ids):
-            logit_lens.append(f'"{t}"[{id}] (p={p}, logit={l})')
+            prediction = Prediction(
+                token_str=t,
+                token_id=id,
+                prob=p,
+                logit=l
+            )
+            logit_lens.append(prediction)
 
         return logit_lens
 
 
     elif kind == "full":
-        raise NotImplementedError(
-            "Full support not yet enabled"
-        )
-        layers = []
-        for l in range(num_layers):
-            logits_probs = []
-            logit_lens_layer = []
+
+        layer_logits = []
+
+        with torch.no_grad():
             with model.trace(prompt):
-                # Process layer output through lm_head to get logits
-                layer_out = model.model.layers[l].output[0]
-                logits = model.lm_head(layer_out).save()
+                for layer in model.model.layers:
+                    # residual stream at this layer
+                    h = layer.output[0]
+                    h_ln = model.model.norm(h)
+                    logits = model.lm_head(h_ln).save()
+                    layer_logits.append(logits)
 
-                # Apply softmax to obtain probabilities
-                probs = logits.softmax(dim=-1).save()
+        results = defaultdict(list)
+        for li, logits in enumerate(layer_logits):
+            last = logits[-1]
+            topk = last.topk(k=k)
+            ids = topk.indices
+            toks = [model.tokenizer.decode(int(i)) for i in ids]
+            probs = last.softmax(dim=-1)[ids]
+            for rank, (t, i, p, l) in enumerate(zip(toks, ids, probs, topk.values), start=1):
+                results[li].append(f'{rank}. "{t}"[{int(i)}] (p={float(p):.6f}, logit={float(l):.6f})')
 
-                logits_probs.append((logits, probs))
-
-            logits = logits_probs[0][0][-1].max(dim=-1).values
-            probs = logits_probs[0][1][-1].max(dim=-1).values
-            token_ids = logits_probs[0][1][-1].max(dim=-1).indices
-            tokens = [model.tokenizer.decode(id) for id in token_ids]
-                
-            for t, l, p, id in zip(tokens, logits, probs, token_ids):
-                logit_lens_layer.append(f'"{t}"[{id}] (p={p}, logit={l})')
-
-            logit_lens.append(logit_lens_layer)
-
-        return logit_lens
-    
-        # Unpack the probabilities
-        probs = torch.cat([probs.value for probs in probs_layers])
-
-        # Find the maximum probability and corresponding tokens for each position
-        max_probs, tokens = probs.max(dim=-1)
-
-        # Decode token IDs to words for each
-        words = [[model.tokenizer.decode(t.cpu()).encode("unicode_escape").decode() for t in layer_tokens]
-            for layer_tokens in tokens]
-
-        return words
+        return results
