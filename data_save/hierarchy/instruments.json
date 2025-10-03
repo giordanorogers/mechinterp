@@ -1,0 +1,185 @@
+{
+    "instruments": {
+      "string instrument": {
+        "bowed string instrument": [
+          "violin",
+          "viola", 
+          "cello",
+          "double bass",
+          "fiddle",
+          "erhu"
+        ],
+        "plucked string instrument": {
+          "guitar": [
+            "acoustic guitar",
+            "electric guitar",
+            "bass guitar",
+            "classical guitar"
+          ],
+          "harp": [
+            "concert harp",
+            "celtic harp",
+            "lyre"
+          ],
+          "lute": [
+            "lute",
+            "mandolin",
+            "banjo",
+            "bouzouki"
+          ],
+          "zither": [
+            "autoharp",
+            "dulcimer",
+            "koto"
+          ]
+        },
+        "struck string instrument": [
+          "piano",
+          "hammered dulcimer",
+          "clavichord"
+        ]
+      },
+      "wind instrument": {
+        "brass instrument": {
+          "valved brass instrument": [
+            "trumpet",
+            "cornet",
+            "flugelhorn"
+          ],
+          "slide brass instrument": [
+            "trombone",
+            "sackbut"
+          ],
+          "large brass instrument": [
+            "french horn",
+            "tuba",
+            "euphonium",
+            "sousaphone"
+          ]
+        },
+        "woodwind instrument": {
+          "flute": [
+            "concert flute",
+            "piccolo",
+            "alto flute",
+            "bass flute"
+          ],
+          "single reed instrument": [
+            "clarinet",
+            "bass clarinet",
+            "saxophone",
+            "alto saxophone"
+          ],
+          "double reed instrument": [
+            "oboe",
+            "bassoon",
+            "english horn",
+            "contrabassoon"
+          ],
+          "recorder": [
+            "soprano recorder",
+            "alto recorder",
+            "tenor recorder"
+          ]
+        },
+        "free reed instrument": [
+          "accordion",
+          "concertina",
+          "harmonica",
+          "melodica"
+        ],
+        "pipe instrument": [
+          "bagpipes",
+          "pan flute"
+        ]
+      },
+      "percussion instrument": {
+        "pitched percussion instrument": {
+          "mallet percussion instrument": [
+            "xylophone",
+            "marimba",
+            "vibraphone",
+            "glockenspiel"
+          ],
+          "melodic drum": [
+            "timpani",
+            "steel drum"
+          ],
+          "bell": [
+            "tubular bells",
+            "handbell",
+            "carillon bells"
+          ]
+        },
+        "unpitched percussion instrument": {
+          "drum": [
+            "snare drum",
+            "bass drum",
+            "tom tom",
+            "djembe",
+            "conga",
+            "bongo",
+            "tabla"
+          ],
+          "cymbal": [
+            "crash cymbal",
+            "ride cymbal",
+            "hi hat",
+            "splash cymbal"
+          ],
+          "shaker": [
+            "maracas",
+            "cabasa",
+            "egg shaker"
+          ],
+          "struck metal": [
+            "triangle",
+            "cowbell",
+            "agogo bells"
+          ],
+          "struck wood": [
+            "wood block",
+            "claves",
+            "temple blocks"
+          ],
+          "frame drum": [
+            "tambourine",
+            "bodhran"
+          ]
+        }
+      },
+      "keyboard instrument": {
+        "acoustic keyboard instrument": [
+          "piano",
+          "harpsichord",
+          "clavichord"
+        ],
+        "organ": [
+          "pipe organ",
+          "harmonium",
+          "pump organ"
+        ]
+      },
+      "electronic instrument": {
+        "synthesizer": [
+          "analog synthesizer",
+          "digital synthesizer",
+          "modular synthesizer"
+        ],
+        "digital keyboard": [
+          "electric piano",
+          "digital piano",
+          "keyboard workstation"
+        ],
+        "electronic percussion": [
+          "drum machine",
+          "electronic drum kit"
+        ],
+        "standalone electronic instrument": [
+          "theremin",
+          "sampler",
+          "talk box"
+        ]
+      }
+    }
+  }

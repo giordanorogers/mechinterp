@@ -27,6 +27,8 @@ def collect_activations(
     remote: bool = False,
     trace_idx: int | None = None,
     model_family: Optional[Literal["llama", "gpt"]] = "llama",
+    return_logits: bool = False,
+    target_token_id: int | None = None,
 ) -> list:
     """
     Collect per-layer activations for a given component.
@@ -62,7 +64,12 @@ def collect_activations(
             for layer in layers:
                 node = components[kind](layer)
                 activations.append(node[indexer].save())
+            if return_logits and target_token_id is not None:
+                target_logits = model.output.logits[0, -1, target_token_id].item().save()
     
+
+    if return_logits and target_token_id is not None:
+        return activations, target_logits
     return activations
 
 def activation_patch(
