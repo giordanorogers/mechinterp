@@ -1,0 +1,42 @@
+2025-10-06 07:07:47,330 - INFO - Loading Qwen-32B model...
+2025-10-06 07:07:48,039 - INFO - Model loaded. Config: 28 layers
+2025-10-06 07:07:48,050 - INFO - Starting batch activation patching experiment at 20251006_070747
+2025-10-06 07:07:48,050 - INFO - Output directory: activation_patching_results
+2025-10-06 07:07:49,728 - INFO - Based on the current allocation process, no modules could be assigned to the following devices due to insufficient memory:
+  - 0: 685253632 bytes required
+  - 1: 622329856 bytes required
+  - 2: 622329856 bytes required
+  - 3: 622329856 bytes required
+  - 4: 622329856 bytes required
+  - 5: 622329856 bytes required
+  - 6: 622329856 bytes required
+These minimum requirements are specific to this allocation attempt and may vary. Consider increasing the available memory for these devices to at least the specified minimum, or adjusting the model config.
+2025-10-06 07:09:05,012 - ERROR - Fatal error: [Errno 36] File name too long: 'Qwen3ForCausalLM(\n  (model): Qwen3Model(\n    (embed_tokens): Embedding(151936, 1024)\n    (layers): ModuleList(\n      (0-27): 28 x Qwen3DecoderLayer(\n        (self_attn): Qwen3Attention(\n          (q_proj): Linear(in_features=1024, out_features=2048, bias=False)\n          (k_proj): Linear(in_features=1024, out_features=1024, bias=False)\n          (v_proj): Linear(in_features=1024, out_features=1024, bias=False)\n          (o_proj): Linear(in_features=2048, out_features=1024, bias=False)\n          (q_norm): Qwen3RMSNorm((128,), eps=1e-06)\n          (k_norm): Qwen3RMSNorm((128,), eps=1e-06)\n        )\n        (mlp): Qwen3MLP(\n          (gate_proj): Linear(in_features=1024, out_features=3072, bias=False)\n          (up_proj): Linear(in_features=1024, out_features=3072, bias=False)\n          (down_proj): Linear(in_features=3072, out_features=1024, bias=False)\n          (act_fn): SiLU()\n        )\n        (input_layernorm): Qwen3RMSNorm((1024,), eps=1e-06)\n        (post_attention_layernorm): Qwen3RMSNorm((1024,), eps=1e-06)\n      )\n    )\n    (norm): Qwen3RMSNorm((1024,), eps=1e-06)\n    (rotary_emb): Qwen3RotaryEmbedding()\n  )\n  (lm_head): Linear(in_features=1024, out_features=151936, bias=False)\n  (generator): Generator(\n    (streamer): Streamer()\n  )\n)_indirect_effects_heatmap_article_first.png'
+Traceback (most recent call last):
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch.py", line 276, in <module>
+    main()
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch.py", line 268, in main
+    visualize_patching(
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch.py", line 219, in visualize_patching
+    plt.savefig(f'{model}_indirect_effects_heatmap_article_first.png', dpi=300, bbox_inches='tight')
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/matplotlib/pyplot.py", line 1251, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/matplotlib/figure.py", line 3490, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/matplotlib/backend_bases.py", line 2184, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/matplotlib/backend_bases.py", line 2040, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/matplotlib/backends/backend_agg.py", line 481, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/matplotlib/backends/backend_agg.py", line 430, in _print_pil
+    mpl.image.imsave(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/matplotlib/image.py", line 1657, in imsave
+    image.save(fname, **pil_kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/PIL/Image.py", line 2576, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 36] File name too long: 'Qwen3ForCausalLM(\n  (model): Qwen3Model(\n    (embed_tokens): Embedding(151936, 1024)\n    (layers): ModuleList(\n      (0-27): 28 x Qwen3DecoderLayer(\n        (self_attn): Qwen3Attention(\n          (q_proj): Linear(in_features=1024, out_features=2048, bias=False)\n          (k_proj): Linear(in_features=1024, out_features=1024, bias=False)\n          (v_proj): Linear(in_features=1024, out_features=1024, bias=False)\n          (o_proj): Linear(in_features=2048, out_features=1024, bias=False)\n          (q_norm): Qwen3RMSNorm((128,), eps=1e-06)\n          (k_norm): Qwen3RMSNorm((128,), eps=1e-06)\n        )\n        (mlp): Qwen3MLP(\n          (gate_proj): Linear(in_features=1024, out_features=3072, bias=False)\n          (up_proj): Linear(in_features=1024, out_features=3072, bias=False)\n          (down_proj): Linear(in_features=3072, out_features=1024, bias=False)\n          (act_fn): SiLU()\n        )\n        (input_layernorm): Qwen3RMSNorm((1024,), eps=1e-06)\n        (post_attention_layernorm): Qwen3RMSNorm((1024,), eps=1e-06)\n      )\n    )\n    (norm): Qwen3RMSNorm((1024,), eps=1e-06)\n    (rotary_emb): Qwen3RotaryEmbedding()\n  )\n  (lm_head): Linear(in_features=1024, out_features=151936, bias=False)\n  (generator): Generator(\n    (streamer): Streamer()\n  )\n)_indirect_effects_heatmap_article_first.png'

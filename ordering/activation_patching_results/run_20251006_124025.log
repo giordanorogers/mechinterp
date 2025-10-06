@@ -1,0 +1,7 @@
+2025-10-06 12:40:25,669 - INFO - Loading Qwen-32B model...
+2025-10-06 12:40:26,696 - INFO - Model loaded. Config: 64 layers
+2025-10-06 12:40:26,704 - INFO - Starting batch activation patching experiment at 20251006_124025
+2025-10-06 12:40:26,705 - INFO - Output directory: activation_patching_results
+2025-10-06 12:40:26,706 - INFO - Processing batch 1/20 (prompts 0-1)
+2025-10-06 12:52:27,695 - INFO - 
+Experiment interrupted by user

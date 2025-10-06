@@ -1,0 +1,177 @@
+2025-10-06 07:33:12,424 - INFO - Loading Qwen-32B model...
+2025-10-06 07:33:13,428 - INFO - Model loaded. Config: 64 layers
+2025-10-06 07:33:13,437 - INFO - Starting batch activation patching experiment at 20251006_073312
+2025-10-06 07:33:13,437 - INFO - Output directory: activation_patching_results
+2025-10-06 07:33:13,438 - INFO - Processing batch 1/10 (prompts 0-2)
+2025-10-06 08:17:22,800 - INFO - Processing batch 2/10 (prompts 2-4)
+2025-10-06 09:01:24,771 - INFO - Processing batch 3/10 (prompts 4-6)
+2025-10-06 09:28:57,005 - ERROR - Fatal error: 
+
+Traceback (most recent call last):
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/backends/execution.py", line 21, in __call__
+    tracer.execute(fn)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/tracing/tracer.py", line 385, in execute
+    self.model.interleave(self.fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/modeling/mixins/meta.py", line 76, in interleave
+    return super().interleave(fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 733, in interleave
+    fn(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 384, in __call__
+    else self._module(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 730, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 463, in forward
+    layer_outputs = decoder_layer(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/modeling_layers.py", line 48, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 300, in forward
+    hidden_states = self.mlp(hidden_states)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 90, in forward
+    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/activation.py", line 432, in forward
+    return F.silu(input, inplace=self.inplace)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/functional.py", line 2380, in silu
+    return torch._C._nn.silu(input)
+
+OutOfMemoryError: CUDA out of memory. Tried to allocate 12.00 MiB. GPU 1 has a total capacity of 79.25 GiB of which 12.12 MiB is free. Process 3289535 has 8.49 GiB memory in use. Including non-PyTorch memory, this process has 59.59 GiB memory in use. Process 2650500 has 11.12 GiB memory in use. Of the allocated memory 57.21 GiB is allocated by PyTorch, and 1.89 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch.py", line 321, in <module>
+    main()
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch.py", line 276, in main
+    batch_scores = activation_patching(
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch.py", line 134, in activation_patching
+    with model.trace(corrupt_prompts):
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/tracing/base.py", line 601, in __exit__
+    self.backend(self)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/backends/execution.py", line 24, in __call__
+    raise wrap_exception(e, tracer.info) from None
+nnsight.NNsightException: 
+
+Traceback (most recent call last):
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/backends/execution.py", line 21, in __call__
+    tracer.execute(fn)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/tracing/tracer.py", line 385, in execute
+    self.model.interleave(self.fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/modeling/mixins/meta.py", line 76, in interleave
+    return super().interleave(fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 733, in interleave
+    fn(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 384, in __call__
+    else self._module(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 730, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 463, in forward
+    layer_outputs = decoder_layer(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/modeling_layers.py", line 48, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 300, in forward
+    hidden_states = self.mlp(hidden_states)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 90, in forward
+    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/activation.py", line 432, in forward
+    return F.silu(input, inplace=self.inplace)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/functional.py", line 2380, in silu
+    return torch._C._nn.silu(input)
+
+OutOfMemoryError: CUDA out of memory. Tried to allocate 12.00 MiB. GPU 1 has a total capacity of 79.25 GiB of which 12.12 MiB is free. Process 3289535 has 8.49 GiB memory in use. Including non-PyTorch memory, this process has 59.59 GiB memory in use. Process 2650500 has 11.12 GiB memory in use. Of the allocated memory 57.21 GiB is allocated by PyTorch, and 1.89 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

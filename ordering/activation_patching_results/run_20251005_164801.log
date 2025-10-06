@@ -1,0 +1,147 @@
+2025-10-05 16:48:01,485 - INFO - Loading Qwen-32B model...
+2025-10-05 16:48:02,217 - INFO - Model loaded. Config: 28 layers
+2025-10-05 16:48:02,225 - INFO - Starting batch activation patching experiment at 20251005_164801
+2025-10-05 16:48:02,225 - INFO - Output directory: activation_patching_results
+2025-10-05 16:48:04,051 - INFO - Based on the current allocation process, no modules could be assigned to the following devices due to insufficient memory:
+  - 0: 685253632 bytes required
+  - 1: 622329856 bytes required
+  - 2: 622329856 bytes required
+  - 3: 622329856 bytes required
+  - 4: 622329856 bytes required
+  - 5: 622329856 bytes required
+  - 6: 622329856 bytes required
+These minimum requirements are specific to this allocation attempt and may vary. Consider increasing the available memory for these devices to at least the specified minimum, or adjusting the model config.
+2025-10-05 16:48:06,775 - ERROR - Fatal error: 
+
+Traceback (most recent call last):
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/backends/execution.py", line 21, in __call__
+    tracer.execute(fn)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/tracing/tracer.py", line 385, in execute
+    self.model.interleave(self.fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/modeling/mixins/meta.py", line 76, in interleave
+    return super().interleave(fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 733, in interleave
+    fn(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 384, in __call__
+    else self._module(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 730, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 463, in forward
+    layer_outputs = decoder_layer(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/modeling_layers.py", line 48, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 281, in forward
+    hidden_states = self.input_layernorm(hidden_states)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 72, in forward
+    return self.weight * hidden_states.to(input_dtype)
+
+OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 7 has a total capacity of 79.25 GiB of which 4.12 MiB is free. Process 3289535 has 14.27 GiB memory in use. Process 1594401 has 14.25 GiB memory in use. Including non-PyTorch memory, this process has 50.70 GiB memory in use. Of the allocated memory 48.54 GiB is allocated by PyTorch, and 1.67 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch.py", line 269, in <module>
+    main()
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch.py", line 250, in main
+    accumulated_scores = activation_patching(
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch.py", line 129, in activation_patching
+    with model.trace(corrupt_prompts):
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/tracing/base.py", line 601, in __exit__
+    self.backend(self)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/backends/execution.py", line 24, in __call__
+    raise wrap_exception(e, tracer.info) from None
+nnsight.NNsightException: 
+
+Traceback (most recent call last):
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/backends/execution.py", line 21, in __call__
+    tracer.execute(fn)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/tracing/tracer.py", line 385, in execute
+    self.model.interleave(self.fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/modeling/mixins/meta.py", line 76, in interleave
+    return super().interleave(fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 733, in interleave
+    fn(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 384, in __call__
+    else self._module(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 730, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 463, in forward
+    layer_outputs = decoder_layer(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/modeling_layers.py", line 48, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 281, in forward
+    hidden_states = self.input_layernorm(hidden_states)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 72, in forward
+    return self.weight * hidden_states.to(input_dtype)
+
+OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 7 has a total capacity of 79.25 GiB of which 4.12 MiB is free. Process 3289535 has 14.27 GiB memory in use. Process 1594401 has 14.25 GiB memory in use. Including non-PyTorch memory, this process has 50.70 GiB memory in use. Of the allocated memory 48.54 GiB is allocated by PyTorch, and 1.67 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

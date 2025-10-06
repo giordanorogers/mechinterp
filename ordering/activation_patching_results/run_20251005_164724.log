@@ -1,0 +1,21 @@
+2025-10-05 16:47:24,852 - INFO - Loading Qwen-32B model...
+2025-10-05 16:47:27,029 - INFO - Model loaded. Config: 28 layers
+2025-10-05 16:47:27,037 - INFO - Starting batch activation patching experiment at 20251005_164724
+2025-10-05 16:47:27,037 - INFO - Output directory: activation_patching_results
+2025-10-05 16:47:30,891 - INFO - Based on the current allocation process, no modules could be assigned to the following devices due to insufficient memory:
+  - 0: 685253632 bytes required
+  - 1: 622329856 bytes required
+  - 2: 622329856 bytes required
+  - 3: 622329856 bytes required
+  - 4: 622329856 bytes required
+  - 5: 622329856 bytes required
+  - 6: 622329856 bytes required
+These minimum requirements are specific to this allocation attempt and may vary. Consider increasing the available memory for these devices to at least the specified minimum, or adjusting the model config.
+2025-10-05 16:47:32,274 - ERROR - Fatal error: activation_patching() missing 1 required positional argument: 'corrupt_logit_diffs'
+Traceback (most recent call last):
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch.py", line 268, in <module>
+    main()
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch.py", line 250, in main
+    accumulated_scores = activation_patching(
+                         ^^^^^^^^^^^^^^^^^^^^
+TypeError: activation_patching() missing 1 required positional argument: 'corrupt_logit_diffs'

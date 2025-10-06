@@ -1,0 +1,17 @@
+2025-10-06 07:24:23,439 - INFO - Loading Qwen-32B model...
+2025-10-06 07:24:24,160 - INFO - Model loaded. Config: 28 layers
+2025-10-06 07:24:24,168 - INFO - Starting batch activation patching experiment at 20251006_072423
+2025-10-06 07:24:24,168 - INFO - Output directory: activation_patching_results
+2025-10-06 07:24:24,169 - INFO - Processing batch 1/10 (prompts 0-2)
+2025-10-06 07:24:25,833 - INFO - Based on the current allocation process, no modules could be assigned to the following devices due to insufficient memory:
+  - 0: 685253632 bytes required
+  - 1: 622329856 bytes required
+  - 2: 622329856 bytes required
+  - 3: 622329856 bytes required
+  - 4: 622329856 bytes required
+  - 5: 622329856 bytes required
+  - 6: 622329856 bytes required
+These minimum requirements are specific to this allocation attempt and may vary. Consider increasing the available memory for these devices to at least the specified minimum, or adjusting the model config.
+2025-10-06 07:25:47,806 - INFO - Processing batch 2/10 (prompts 2-4)
+2025-10-06 07:25:56,568 - INFO - 
+Experiment interrupted by user
