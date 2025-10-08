@@ -1,0 +1,606 @@
+2025-10-06 13:43:02,983 - INFO - Loading Qwen-32B model...
+2025-10-06 13:43:09,053 - INFO - Model loaded. Config: 64 layers
+2025-10-06 13:43:09,061 - INFO - Starting batch activation patching experiment at 20251006_134302
+2025-10-06 13:43:09,061 - INFO - Output directory: activation_patching_results
+2025-10-06 13:43:09,062 - INFO - Processing batch 1/20 (prompts 0-1)
+2025-10-06 13:43:09,062 - INFO - Saved metadata for batch 0
+2025-10-06 13:43:47,569 - INFO - Saved clean/corrupt data for batch 0
+2025-10-06 13:44:13,468 - INFO - Saved layer 0 results for batch 0
+2025-10-06 13:44:38,800 - INFO - Saved layer 1 results for batch 0
+2025-10-06 13:45:04,932 - INFO - Saved layer 2 results for batch 0
+2025-10-06 13:45:31,180 - INFO - Saved layer 3 results for batch 0
+2025-10-06 13:45:56,353 - INFO - Saved layer 4 results for batch 0
+2025-10-06 13:46:21,988 - INFO - Saved layer 5 results for batch 0
+2025-10-06 13:46:49,767 - INFO - Saved layer 6 results for batch 0
+2025-10-06 13:47:13,684 - INFO - Saved layer 7 results for batch 0
+2025-10-06 13:47:38,983 - INFO - Saved layer 8 results for batch 0
+2025-10-06 13:48:04,208 - INFO - Saved layer 9 results for batch 0
+2025-10-06 13:48:32,510 - INFO - Saved layer 10 results for batch 0
+2025-10-06 13:48:56,545 - INFO - Saved layer 11 results for batch 0
+2025-10-06 13:49:22,469 - INFO - Saved layer 12 results for batch 0
+2025-10-06 13:49:50,738 - INFO - Saved layer 13 results for batch 0
+2025-10-06 13:50:15,001 - INFO - Saved layer 14 results for batch 0
+2025-10-06 13:50:40,180 - INFO - Saved layer 15 results for batch 0
+2025-10-06 13:51:05,844 - INFO - Saved layer 16 results for batch 0
+2025-10-06 13:51:34,780 - INFO - Saved layer 17 results for batch 0
+2025-10-06 13:51:58,816 - INFO - Saved layer 18 results for batch 0
+2025-10-06 13:52:24,663 - INFO - Saved layer 19 results for batch 0
+2025-10-06 13:53:02,601 - INFO - Saved layer 20 results for batch 0
+2025-10-06 13:53:27,177 - INFO - Saved layer 21 results for batch 0
+2025-10-06 13:53:47,006 - INFO - Saved layer 22 results for batch 0
+2025-10-06 13:54:13,808 - INFO - Saved layer 23 results for batch 0
+2025-10-06 13:54:35,150 - INFO - Saved layer 24 results for batch 0
+2025-10-06 13:54:57,142 - INFO - Saved layer 25 results for batch 0
+2025-10-06 13:55:17,066 - INFO - Saved layer 26 results for batch 0
+2025-10-06 13:55:38,498 - INFO - Saved layer 27 results for batch 0
+2025-10-06 13:55:59,992 - INFO - Saved layer 28 results for batch 0
+2025-10-06 13:56:22,067 - INFO - Saved layer 29 results for batch 0
+2025-10-06 13:56:41,874 - INFO - Saved layer 30 results for batch 0
+2025-10-06 13:57:03,137 - INFO - Saved layer 31 results for batch 0
+2025-10-06 13:57:24,599 - INFO - Saved layer 32 results for batch 0
+2025-10-06 13:57:44,376 - INFO - Saved layer 33 results for batch 0
+2025-10-06 13:58:05,345 - INFO - Saved layer 34 results for batch 0
+2025-10-06 13:58:26,463 - INFO - Saved layer 35 results for batch 0
+2025-10-06 13:58:48,042 - INFO - Saved layer 36 results for batch 0
+2025-10-06 13:59:07,836 - INFO - Saved layer 37 results for batch 0
+2025-10-06 13:59:28,931 - INFO - Saved layer 38 results for batch 0
+2025-10-06 13:59:50,144 - INFO - Saved layer 39 results for batch 0
+2025-10-06 14:00:11,779 - INFO - Saved layer 40 results for batch 0
+2025-10-06 14:00:31,563 - INFO - Saved layer 41 results for batch 0
+2025-10-06 14:00:52,794 - INFO - Saved layer 42 results for batch 0
+2025-10-06 14:01:14,028 - INFO - Saved layer 43 results for batch 0
+2025-10-06 14:01:35,790 - INFO - Saved layer 44 results for batch 0
+2025-10-06 14:01:55,571 - INFO - Saved layer 45 results for batch 0
+2025-10-06 14:02:16,913 - INFO - Saved layer 46 results for batch 0
+2025-10-06 14:02:38,310 - INFO - Saved layer 47 results for batch 0
+2025-10-06 14:03:00,162 - INFO - Saved layer 48 results for batch 0
+2025-10-06 14:03:20,008 - INFO - Saved layer 49 results for batch 0
+2025-10-06 14:03:41,501 - INFO - Saved layer 50 results for batch 0
+2025-10-06 14:04:03,026 - INFO - Saved layer 51 results for batch 0
+2025-10-06 14:04:24,867 - INFO - Saved layer 52 results for batch 0
+2025-10-06 14:04:44,679 - INFO - Saved layer 53 results for batch 0
+2025-10-06 14:05:06,210 - INFO - Saved layer 54 results for batch 0
+2025-10-06 14:05:27,819 - INFO - Saved layer 55 results for batch 0
+2025-10-06 14:05:47,654 - INFO - Saved layer 56 results for batch 0
+2025-10-06 14:06:08,612 - INFO - Saved layer 57 results for batch 0
+2025-10-06 14:06:29,785 - INFO - Saved layer 58 results for batch 0
+2025-10-06 14:06:51,403 - INFO - Saved layer 59 results for batch 0
+2025-10-06 14:07:11,224 - INFO - Saved layer 60 results for batch 0
+2025-10-06 14:07:32,333 - INFO - Saved layer 61 results for batch 0
+2025-10-06 14:07:53,546 - INFO - Saved layer 62 results for batch 0
+2025-10-06 14:08:15,210 - INFO - Saved layer 63 results for batch 0
+2025-10-06 14:08:15,211 - INFO - Marked batch 0 as complete
+2025-10-06 14:08:15,212 - INFO - Processing batch 2/20 (prompts 1-2)
+2025-10-06 14:08:15,212 - INFO - Saved metadata for batch 1
+2025-10-06 14:08:15,874 - INFO - Saved clean/corrupt data for batch 1
+2025-10-06 14:08:35,825 - INFO - Saved layer 0 results for batch 1
+2025-10-06 14:08:56,839 - INFO - Saved layer 1 results for batch 1
+2025-10-06 14:09:18,195 - INFO - Saved layer 2 results for batch 1
+2025-10-06 14:09:39,917 - INFO - Saved layer 3 results for batch 1
+2025-10-06 14:09:59,714 - INFO - Saved layer 4 results for batch 1
+2025-10-06 14:10:21,013 - INFO - Saved layer 5 results for batch 1
+2025-10-06 14:10:42,464 - INFO - Saved layer 6 results for batch 1
+2025-10-06 14:11:04,510 - INFO - Saved layer 7 results for batch 1
+2025-10-06 14:11:24,321 - INFO - Saved layer 8 results for batch 1
+2025-10-06 14:11:45,604 - INFO - Saved layer 9 results for batch 1
+2025-10-06 14:12:06,935 - INFO - Saved layer 10 results for batch 1
+2025-10-06 14:12:28,877 - INFO - Saved layer 11 results for batch 1
+2025-10-06 14:12:48,694 - INFO - Saved layer 12 results for batch 1
+2025-10-06 14:13:09,999 - INFO - Saved layer 13 results for batch 1
+2025-10-06 14:13:31,570 - INFO - Saved layer 14 results for batch 1
+2025-10-06 14:13:51,396 - INFO - Saved layer 15 results for batch 1
+2025-10-06 14:14:12,578 - INFO - Saved layer 16 results for batch 1
+2025-10-06 14:14:33,786 - INFO - Saved layer 17 results for batch 1
+2025-10-06 14:14:55,375 - INFO - Saved layer 18 results for batch 1
+2025-10-06 14:15:15,395 - INFO - Saved layer 19 results for batch 1
+2025-10-06 14:15:36,624 - INFO - Saved layer 20 results for batch 1
+2025-10-06 14:15:57,793 - INFO - Saved layer 21 results for batch 1
+2025-10-06 14:16:19,502 - INFO - Saved layer 22 results for batch 1
+2025-10-06 14:16:39,315 - INFO - Saved layer 23 results for batch 1
+2025-10-06 14:17:00,426 - INFO - Saved layer 24 results for batch 1
+2025-10-06 14:17:21,812 - INFO - Saved layer 25 results for batch 1
+2025-10-06 14:17:43,592 - INFO - Saved layer 26 results for batch 1
+2025-10-06 14:18:03,391 - INFO - Saved layer 27 results for batch 1
+2025-10-06 14:18:24,718 - INFO - Saved layer 28 results for batch 1
+2025-10-06 14:18:45,967 - INFO - Saved layer 29 results for batch 1
+2025-10-06 14:19:08,081 - INFO - Saved layer 30 results for batch 1
+2025-10-06 14:19:28,056 - INFO - Saved layer 31 results for batch 1
+2025-10-06 14:19:49,598 - INFO - Saved layer 32 results for batch 1
+2025-10-06 14:20:11,329 - INFO - Saved layer 33 results for batch 1
+2025-10-06 14:20:31,212 - INFO - Saved layer 34 results for batch 1
+2025-10-06 14:20:52,464 - INFO - Saved layer 35 results for batch 1
+2025-10-06 14:21:13,816 - INFO - Saved layer 36 results for batch 1
+2025-10-06 14:21:35,504 - INFO - Saved layer 37 results for batch 1
+2025-10-06 14:21:55,398 - INFO - Saved layer 38 results for batch 1
+2025-10-06 14:22:16,553 - INFO - Saved layer 39 results for batch 1
+2025-10-06 14:22:38,180 - INFO - Saved layer 40 results for batch 1
+2025-10-06 14:22:59,941 - INFO - Saved layer 41 results for batch 1
+2025-10-06 14:23:19,808 - INFO - Saved layer 42 results for batch 1
+2025-10-06 14:23:41,155 - INFO - Saved layer 43 results for batch 1
+2025-10-06 14:24:02,589 - INFO - Saved layer 44 results for batch 1
+2025-10-06 14:24:24,744 - INFO - Saved layer 45 results for batch 1
+2025-10-06 14:24:44,620 - INFO - Saved layer 46 results for batch 1
+2025-10-06 14:25:06,040 - INFO - Saved layer 47 results for batch 1
+2025-10-06 14:25:27,688 - INFO - Saved layer 48 results for batch 1
+2025-10-06 14:25:49,730 - INFO - Saved layer 49 results for batch 1
+2025-10-06 14:26:09,627 - INFO - Saved layer 50 results for batch 1
+2025-10-06 14:26:31,314 - INFO - Saved layer 51 results for batch 1
+2025-10-06 14:26:53,074 - INFO - Saved layer 52 results for batch 1
+2025-10-06 14:27:15,361 - INFO - Saved layer 53 results for batch 1
+2025-10-06 14:27:35,283 - INFO - Saved layer 54 results for batch 1
+2025-10-06 14:27:56,767 - INFO - Saved layer 55 results for batch 1
+2025-10-06 14:28:18,566 - INFO - Saved layer 56 results for batch 1
+2025-10-06 14:28:38,472 - INFO - Saved layer 57 results for batch 1
+2025-10-06 14:28:59,686 - INFO - Saved layer 58 results for batch 1
+2025-10-06 14:29:20,940 - INFO - Saved layer 59 results for batch 1
+2025-10-06 14:29:43,096 - INFO - Saved layer 60 results for batch 1
+2025-10-06 14:30:03,008 - INFO - Saved layer 61 results for batch 1
+2025-10-06 14:30:24,403 - INFO - Saved layer 62 results for batch 1
+2025-10-06 14:30:46,045 - INFO - Saved layer 63 results for batch 1
+2025-10-06 14:30:46,046 - INFO - Marked batch 1 as complete
+2025-10-06 14:30:46,046 - INFO - Processing batch 3/20 (prompts 2-3)
+2025-10-06 14:30:46,047 - INFO - Saved metadata for batch 2
+2025-10-06 14:30:46,700 - INFO - Saved clean/corrupt data for batch 2
+2025-10-06 14:31:09,170 - INFO - Saved layer 0 results for batch 2
+2025-10-06 14:31:29,096 - INFO - Saved layer 1 results for batch 2
+2025-10-06 14:31:50,251 - INFO - Saved layer 2 results for batch 2
+2025-10-06 14:32:11,898 - INFO - Saved layer 3 results for batch 2
+2025-10-06 14:32:33,746 - INFO - Saved layer 4 results for batch 2
+2025-10-06 14:32:53,560 - INFO - Saved layer 5 results for batch 2
+2025-10-06 14:33:14,857 - INFO - Saved layer 6 results for batch 2
+2025-10-06 14:33:36,363 - INFO - Saved layer 7 results for batch 2
+2025-10-06 14:33:58,365 - INFO - Saved layer 8 results for batch 2
+2025-10-06 14:34:18,267 - INFO - Saved layer 9 results for batch 2
+2025-10-06 14:34:39,643 - INFO - Saved layer 10 results for batch 2
+2025-10-06 14:35:01,514 - INFO - Saved layer 11 results for batch 2
+2025-10-06 14:35:23,946 - INFO - Saved layer 12 results for batch 2
+2025-10-06 14:35:43,882 - INFO - Saved layer 13 results for batch 2
+2025-10-06 14:36:05,531 - INFO - Saved layer 14 results for batch 2
+2025-10-06 14:36:27,338 - INFO - Saved layer 15 results for batch 2
+2025-10-06 14:36:47,257 - INFO - Saved layer 16 results for batch 2
+2025-10-06 14:37:08,263 - INFO - Saved layer 17 results for batch 2
+2025-10-06 14:37:29,758 - INFO - Saved layer 18 results for batch 2
+2025-10-06 14:37:51,646 - INFO - Saved layer 19 results for batch 2
+2025-10-06 14:38:11,568 - INFO - Saved layer 20 results for batch 2
+2025-10-06 14:38:32,672 - INFO - Saved layer 21 results for batch 2
+2025-10-06 14:38:54,262 - INFO - Saved layer 22 results for batch 2
+2025-10-06 14:39:16,176 - INFO - Saved layer 23 results for batch 2
+2025-10-06 14:39:36,075 - INFO - Saved layer 24 results for batch 2
+2025-10-06 14:39:57,659 - INFO - Saved layer 25 results for batch 2
+2025-10-06 14:40:19,422 - INFO - Saved layer 26 results for batch 2
+2025-10-06 14:40:41,485 - INFO - Saved layer 27 results for batch 2
+2025-10-06 14:41:01,409 - INFO - Saved layer 28 results for batch 2
+2025-10-06 14:41:22,782 - INFO - Saved layer 29 results for batch 2
+2025-10-06 14:41:44,663 - INFO - Saved layer 30 results for batch 2
+2025-10-06 14:42:06,779 - INFO - Saved layer 31 results for batch 2
+2025-10-06 14:42:26,722 - INFO - Saved layer 32 results for batch 2
+2025-10-06 14:42:48,140 - INFO - Saved layer 33 results for batch 2
+2025-10-06 14:43:10,068 - INFO - Saved layer 34 results for batch 2
+2025-10-06 14:43:29,955 - INFO - Saved layer 35 results for batch 2
+2025-10-06 14:43:51,184 - INFO - Saved layer 36 results for batch 2
+2025-10-06 14:44:12,454 - INFO - Saved layer 37 results for batch 2
+2025-10-06 14:44:34,300 - INFO - Saved layer 38 results for batch 2
+2025-10-06 14:44:54,180 - INFO - Saved layer 39 results for batch 2
+2025-10-06 14:45:15,311 - INFO - Saved layer 40 results for batch 2
+2025-10-06 14:45:36,817 - INFO - Saved layer 41 results for batch 2
+2025-10-06 14:45:58,952 - INFO - Saved layer 42 results for batch 2
+2025-10-06 14:46:18,862 - INFO - Saved layer 43 results for batch 2
+2025-10-06 14:46:40,465 - INFO - Saved layer 44 results for batch 2
+2025-10-06 14:47:02,055 - INFO - Saved layer 45 results for batch 2
+2025-10-06 14:47:24,239 - INFO - Saved layer 46 results for batch 2
+2025-10-06 14:47:44,139 - INFO - Saved layer 47 results for batch 2
+2025-10-06 14:48:05,887 - INFO - Saved layer 48 results for batch 2
+2025-10-06 14:48:27,649 - INFO - Saved layer 49 results for batch 2
+2025-10-06 14:48:49,939 - INFO - Saved layer 50 results for batch 2
+2025-10-06 14:49:09,877 - INFO - Saved layer 51 results for batch 2
+2025-10-06 14:49:31,202 - INFO - Saved layer 52 results for batch 2
+2025-10-06 14:49:53,154 - INFO - Saved layer 53 results for batch 2
+2025-10-06 14:50:13,072 - INFO - Saved layer 54 results for batch 2
+2025-10-06 14:50:34,170 - INFO - Saved layer 55 results for batch 2
+2025-10-06 14:50:55,444 - INFO - Saved layer 56 results for batch 2
+2025-10-06 14:51:17,427 - INFO - Saved layer 57 results for batch 2
+2025-10-06 14:51:37,307 - INFO - Saved layer 58 results for batch 2
+2025-10-06 14:51:58,767 - INFO - Saved layer 59 results for batch 2
+2025-10-06 14:52:20,110 - INFO - Saved layer 60 results for batch 2
+2025-10-06 14:52:42,242 - INFO - Saved layer 61 results for batch 2
+2025-10-06 14:53:02,150 - INFO - Saved layer 62 results for batch 2
+2025-10-06 14:53:23,318 - INFO - Saved layer 63 results for batch 2
+2025-10-06 14:53:23,319 - INFO - Marked batch 2 as complete
+2025-10-06 14:53:23,320 - INFO - Processing batch 4/20 (prompts 3-4)
+2025-10-06 14:53:23,320 - INFO - Saved metadata for batch 3
+2025-10-06 14:53:23,999 - INFO - Saved clean/corrupt data for batch 3
+2025-10-06 14:53:45,746 - INFO - Saved layer 0 results for batch 3
+2025-10-06 14:54:07,705 - INFO - Saved layer 1 results for batch 3
+2025-10-06 14:54:27,607 - INFO - Saved layer 2 results for batch 3
+2025-10-06 14:54:48,784 - INFO - Saved layer 3 results for batch 3
+2025-10-06 14:55:10,290 - INFO - Saved layer 4 results for batch 3
+2025-10-06 14:55:32,256 - INFO - Saved layer 5 results for batch 3
+2025-10-06 14:55:52,145 - INFO - Saved layer 6 results for batch 3
+2025-10-06 14:56:13,582 - INFO - Saved layer 7 results for batch 3
+2025-10-06 14:56:35,336 - INFO - Saved layer 8 results for batch 3
+2025-10-06 14:56:57,503 - INFO - Saved layer 9 results for batch 3
+2025-10-06 14:57:17,456 - INFO - Saved layer 10 results for batch 3
+2025-10-06 14:57:39,078 - INFO - Saved layer 11 results for batch 3
+2025-10-06 14:58:00,804 - INFO - Saved layer 12 results for batch 3
+2025-10-06 14:58:20,708 - INFO - Saved layer 13 results for batch 3
+2025-10-06 14:58:41,952 - INFO - Saved layer 14 results for batch 3
+2025-10-06 14:59:03,561 - INFO - Saved layer 15 results for batch 3
+2025-10-06 14:59:25,309 - INFO - Saved layer 16 results for batch 3
+2025-10-06 14:59:45,185 - INFO - Saved layer 17 results for batch 3
+2025-10-06 15:00:06,404 - INFO - Saved layer 18 results for batch 3
+2025-10-06 15:00:27,947 - INFO - Saved layer 19 results for batch 3
+2025-10-06 15:00:50,019 - INFO - Saved layer 20 results for batch 3
+2025-10-06 15:01:09,932 - INFO - Saved layer 21 results for batch 3
+2025-10-06 15:01:31,143 - INFO - Saved layer 22 results for batch 3
+2025-10-06 15:01:52,674 - INFO - Saved layer 23 results for batch 3
+2025-10-06 15:02:14,562 - INFO - Saved layer 24 results for batch 3
+2025-10-06 15:02:34,473 - INFO - Saved layer 25 results for batch 3
+2025-10-06 15:02:55,872 - INFO - Saved layer 26 results for batch 3
+2025-10-06 15:03:17,802 - INFO - Saved layer 27 results for batch 3
+2025-10-06 15:03:39,858 - INFO - Saved layer 28 results for batch 3
+2025-10-06 15:03:59,761 - INFO - Saved layer 29 results for batch 3
+2025-10-06 15:04:21,350 - INFO - Saved layer 30 results for batch 3
+2025-10-06 15:04:43,096 - INFO - Saved layer 31 results for batch 3
+2025-10-06 15:05:05,332 - INFO - Saved layer 32 results for batch 3
+2025-10-06 15:05:25,277 - INFO - Saved layer 33 results for batch 3
+2025-10-06 15:05:46,973 - INFO - Saved layer 34 results for batch 3
+2025-10-06 15:06:08,822 - INFO - Saved layer 35 results for batch 3
+2025-10-06 15:06:28,728 - INFO - Saved layer 36 results for batch 3
+2025-10-06 15:06:49,813 - INFO - Saved layer 37 results for batch 3
+2025-10-06 15:07:11,499 - INFO - Saved layer 38 results for batch 3
+2025-10-06 15:07:33,430 - INFO - Saved layer 39 results for batch 3
+2025-10-06 15:07:53,332 - INFO - Saved layer 40 results for batch 3
+2025-10-06 15:08:14,554 - INFO - Saved layer 41 results for batch 3
+2025-10-06 15:08:36,047 - INFO - Saved layer 42 results for batch 3
+2025-10-06 15:08:58,257 - INFO - Saved layer 43 results for batch 3
+2025-10-06 15:09:18,206 - INFO - Saved layer 44 results for batch 3
+2025-10-06 15:09:39,508 - INFO - Saved layer 45 results for batch 3
+2025-10-06 15:10:01,164 - INFO - Saved layer 46 results for batch 3
+2025-10-06 15:10:23,148 - INFO - Saved layer 47 results for batch 3
+2025-10-06 15:10:43,099 - INFO - Saved layer 48 results for batch 3
+2025-10-06 15:11:04,652 - INFO - Saved layer 49 results for batch 3
+2025-10-06 15:11:26,403 - INFO - Saved layer 50 results for batch 3
+2025-10-06 15:11:48,518 - INFO - Saved layer 51 results for batch 3
+2025-10-06 15:12:08,440 - INFO - Saved layer 52 results for batch 3
+2025-10-06 15:12:30,127 - INFO - Saved layer 53 results for batch 3
+2025-10-06 15:12:52,091 - INFO - Saved layer 54 results for batch 3
+2025-10-06 15:13:11,976 - INFO - Saved layer 55 results for batch 3
+2025-10-06 15:13:33,110 - INFO - Saved layer 56 results for batch 3
+2025-10-06 15:13:54,511 - INFO - Saved layer 57 results for batch 3
+2025-10-06 15:14:16,511 - INFO - Saved layer 58 results for batch 3
+2025-10-06 15:14:36,406 - INFO - Saved layer 59 results for batch 3
+2025-10-06 15:14:57,824 - INFO - Saved layer 60 results for batch 3
+2025-10-06 15:15:19,213 - INFO - Saved layer 61 results for batch 3
+2025-10-06 15:15:41,152 - INFO - Saved layer 62 results for batch 3
+2025-10-06 15:16:01,047 - INFO - Saved layer 63 results for batch 3
+2025-10-06 15:16:01,048 - INFO - Marked batch 3 as complete
+2025-10-06 15:16:01,048 - INFO - Processing batch 5/20 (prompts 4-5)
+2025-10-06 15:16:01,048 - INFO - Saved metadata for batch 4
+2025-10-06 15:16:01,831 - INFO - Saved clean/corrupt data for batch 4
+2025-10-06 15:16:23,052 - INFO - Saved layer 0 results for batch 4
+2025-10-06 15:16:44,695 - INFO - Saved layer 1 results for batch 4
+2025-10-06 15:17:06,572 - INFO - Saved layer 2 results for batch 4
+2025-10-06 15:17:26,493 - INFO - Saved layer 3 results for batch 4
+2025-10-06 15:17:47,974 - INFO - Saved layer 4 results for batch 4
+2025-10-06 15:18:09,669 - INFO - Saved layer 5 results for batch 4
+2025-10-06 15:18:31,736 - INFO - Saved layer 6 results for batch 4
+2025-10-06 15:18:51,636 - INFO - Saved layer 7 results for batch 4
+2025-10-06 15:19:13,309 - INFO - Saved layer 8 results for batch 4
+2025-10-06 15:19:34,991 - INFO - Saved layer 9 results for batch 4
+2025-10-06 15:19:57,410 - INFO - Saved layer 10 results for batch 4
+2025-10-06 15:20:17,357 - INFO - Saved layer 11 results for batch 4
+2025-10-06 15:20:38,831 - INFO - Saved layer 12 results for batch 4
+2025-10-06 15:21:01,850 - INFO - Saved layer 13 results for batch 4
+2025-10-06 15:21:21,731 - INFO - Saved layer 14 results for batch 4
+2025-10-06 15:21:42,631 - INFO - Saved layer 15 results for batch 4
+2025-10-06 15:22:03,979 - INFO - Saved layer 16 results for batch 4
+2025-10-06 15:22:25,898 - INFO - Saved layer 17 results for batch 4
+2025-10-06 15:22:47,613 - INFO - Saved layer 18 results for batch 4
+2025-10-06 15:23:12,973 - INFO - Saved layer 19 results for batch 4
+2025-10-06 15:23:41,074 - INFO - Saved layer 20 results for batch 4
+2025-10-06 15:24:07,361 - INFO - Saved layer 21 results for batch 4
+2025-10-06 15:24:31,403 - INFO - Saved layer 22 results for batch 4
+2025-10-06 15:24:57,195 - INFO - Saved layer 23 results for batch 4
+2025-10-06 15:25:22,499 - INFO - Saved layer 24 results for batch 4
+2025-10-06 15:25:49,261 - INFO - Saved layer 25 results for batch 4
+2025-10-06 15:26:14,739 - INFO - Saved layer 26 results for batch 4
+2025-10-06 15:26:40,390 - INFO - Saved layer 27 results for batch 4
+2025-10-06 15:27:06,340 - INFO - Saved layer 28 results for batch 4
+2025-10-06 15:27:32,668 - INFO - Saved layer 29 results for batch 4
+2025-10-06 15:27:56,819 - INFO - Saved layer 30 results for batch 4
+2025-10-06 15:28:23,348 - INFO - Saved layer 31 results for batch 4
+2025-10-06 15:28:50,874 - INFO - Saved layer 32 results for batch 4
+2025-10-06 15:29:17,842 - INFO - Saved layer 33 results for batch 4
+2025-10-06 15:29:41,997 - INFO - Saved layer 34 results for batch 4
+2025-10-06 15:30:07,836 - INFO - Saved layer 35 results for batch 4
+2025-10-06 15:30:34,196 - INFO - Saved layer 36 results for batch 4
+2025-10-06 15:30:59,476 - INFO - Saved layer 37 results for batch 4
+2025-10-06 15:31:25,285 - INFO - Saved layer 38 results for batch 4
+2025-10-06 15:31:50,532 - INFO - Saved layer 39 results for batch 4
+2025-10-06 15:32:16,428 - INFO - Saved layer 40 results for batch 4
+2025-10-06 15:32:40,295 - INFO - Saved layer 41 results for batch 4
+2025-10-06 15:33:05,717 - INFO - Saved layer 42 results for batch 4
+2025-10-06 15:33:31,600 - INFO - Saved layer 43 results for batch 4
+2025-10-06 15:33:59,977 - INFO - Saved layer 44 results for batch 4
+2025-10-06 15:34:23,923 - INFO - Saved layer 45 results for batch 4
+2025-10-06 15:34:49,467 - INFO - Saved layer 46 results for batch 4
+2025-10-06 15:35:15,414 - INFO - Saved layer 47 results for batch 4
+2025-10-06 15:35:41,877 - INFO - Saved layer 48 results for batch 4
+2025-10-06 15:36:06,740 - INFO - Saved layer 49 results for batch 4
+2025-10-06 15:36:33,067 - INFO - Saved layer 50 results for batch 4
+2025-10-06 15:36:58,969 - INFO - Saved layer 51 results for batch 4
+2025-10-06 15:37:25,265 - INFO - Saved layer 52 results for batch 4
+2025-10-06 15:37:49,338 - INFO - Saved layer 53 results for batch 4
+2025-10-06 15:38:15,708 - INFO - Saved layer 54 results for batch 4
+2025-10-06 15:38:43,319 - INFO - Saved layer 55 results for batch 4
+2025-10-06 15:39:07,292 - INFO - Saved layer 56 results for batch 4
+2025-10-06 15:39:32,700 - INFO - Saved layer 57 results for batch 4
+2025-10-06 15:39:58,105 - INFO - Saved layer 58 results for batch 4
+2025-10-06 15:40:24,238 - INFO - Saved layer 59 results for batch 4
+2025-10-06 15:40:49,537 - INFO - Saved layer 60 results for batch 4
+2025-10-06 15:41:16,084 - INFO - Saved layer 61 results for batch 4
+2025-10-06 15:41:41,793 - INFO - Saved layer 62 results for batch 4
+2025-10-06 15:42:08,196 - INFO - Saved layer 63 results for batch 4
+2025-10-06 15:42:08,197 - INFO - Marked batch 4 as complete
+2025-10-06 15:42:08,197 - INFO - Processing batch 6/20 (prompts 5-6)
+2025-10-06 15:42:08,197 - INFO - Saved metadata for batch 5
+2025-10-06 15:42:08,907 - INFO - Saved clean/corrupt data for batch 5
+2025-10-06 15:42:33,193 - INFO - Saved layer 0 results for batch 5
+2025-10-06 15:43:00,866 - INFO - Saved layer 1 results for batch 5
+2025-10-06 15:43:26,631 - INFO - Saved layer 2 results for batch 5
+2025-10-06 15:43:53,161 - INFO - Saved layer 3 results for batch 5
+2025-10-06 15:44:17,121 - INFO - Saved layer 4 results for batch 5
+2025-10-06 15:44:43,126 - INFO - Saved layer 5 results for batch 5
+2025-10-06 15:45:09,689 - INFO - Saved layer 6 results for batch 5
+2025-10-06 15:45:36,700 - INFO - Saved layer 7 results for batch 5
+2025-10-06 15:46:00,535 - INFO - Saved layer 8 results for batch 5
+2025-10-06 15:46:25,854 - INFO - Saved layer 9 results for batch 5
+2025-10-06 15:46:51,594 - INFO - Saved layer 10 results for batch 5
+2025-10-06 15:47:18,047 - INFO - Saved layer 11 results for batch 5
+2025-10-06 15:47:43,293 - INFO - Saved layer 12 results for batch 5
+2025-10-06 15:48:09,174 - INFO - Saved layer 13 results for batch 5
+2025-10-06 15:48:35,049 - INFO - Saved layer 14 results for batch 5
+2025-10-06 15:48:58,797 - INFO - Saved layer 15 results for batch 5
+2025-10-06 15:49:24,140 - INFO - Saved layer 16 results for batch 5
+2025-10-06 15:49:49,637 - INFO - Saved layer 17 results for batch 5
+2025-10-06 15:50:17,084 - INFO - Saved layer 18 results for batch 5
+2025-10-06 15:50:41,566 - INFO - Saved layer 19 results for batch 5
+2025-10-06 15:51:06,946 - INFO - Saved layer 20 results for batch 5
+2025-10-06 15:51:32,872 - INFO - Saved layer 21 results for batch 5
+2025-10-06 15:51:59,158 - INFO - Saved layer 22 results for batch 5
+2025-10-06 15:52:23,287 - INFO - Saved layer 23 results for batch 5
+2025-10-06 15:52:50,731 - INFO - Saved layer 24 results for batch 5
+2025-10-06 15:53:17,001 - INFO - Saved layer 25 results for batch 5
+2025-10-06 15:53:43,328 - INFO - Saved layer 26 results for batch 5
+2025-10-06 15:54:07,340 - INFO - Saved layer 27 results for batch 5
+2025-10-06 15:54:33,589 - INFO - Saved layer 28 results for batch 5
+2025-10-06 15:55:02,317 - INFO - Saved layer 29 results for batch 5
+2025-10-06 15:55:28,812 - INFO - Saved layer 30 results for batch 5
+2025-10-06 15:55:52,674 - INFO - Saved layer 31 results for batch 5
+2025-10-06 15:56:18,460 - INFO - Saved layer 32 results for batch 5
+2025-10-06 15:56:44,980 - INFO - Saved layer 33 results for batch 5
+2025-10-06 15:57:12,353 - INFO - Saved layer 34 results for batch 5
+2025-10-06 15:57:36,356 - INFO - Saved layer 35 results for batch 5
+2025-10-06 15:58:02,180 - INFO - Saved layer 36 results for batch 5
+2025-10-06 15:58:27,728 - INFO - Saved layer 37 results for batch 5
+2025-10-06 15:58:51,657 - INFO - Saved layer 38 results for batch 5
+2025-10-06 15:59:16,628 - INFO - Saved layer 39 results for batch 5
+2025-10-06 15:59:44,578 - INFO - Saved layer 40 results for batch 5
+2025-10-06 16:00:10,817 - INFO - Saved layer 41 results for batch 5
+2025-10-06 16:00:34,815 - INFO - Saved layer 42 results for batch 5
+2025-10-06 16:01:00,002 - INFO - Saved layer 43 results for batch 5
+2025-10-06 16:01:25,967 - INFO - Saved layer 44 results for batch 5
+2025-10-06 16:01:54,703 - INFO - Saved layer 45 results for batch 5
+2025-10-06 16:02:18,555 - INFO - Saved layer 46 results for batch 5
+2025-10-06 16:02:43,939 - INFO - Saved layer 47 results for batch 5
+2025-10-06 16:03:09,719 - INFO - Saved layer 48 results for batch 5
+2025-10-06 16:03:36,015 - INFO - Saved layer 49 results for batch 5
+2025-10-06 16:04:00,957 - INFO - Saved layer 50 results for batch 5
+2025-10-06 16:04:27,598 - INFO - Saved layer 51 results for batch 5
+2025-10-06 16:04:53,204 - INFO - Saved layer 52 results for batch 5
+2025-10-06 16:05:19,708 - INFO - Saved layer 53 results for batch 5
+2025-10-06 16:05:43,842 - INFO - Saved layer 54 results for batch 5
+2025-10-06 16:06:09,372 - INFO - Saved layer 55 results for batch 5
+2025-10-06 16:06:37,569 - INFO - Saved layer 56 results for batch 5
+2025-10-06 16:07:01,507 - INFO - Saved layer 57 results for batch 5
+2025-10-06 16:07:26,933 - INFO - Saved layer 58 results for batch 5
+2025-10-06 16:07:52,995 - INFO - Saved layer 59 results for batch 5
+2025-10-06 16:08:19,408 - INFO - Saved layer 60 results for batch 5
+2025-10-06 16:08:44,561 - INFO - Saved layer 61 results for batch 5
+2025-10-06 16:09:10,872 - INFO - Saved layer 62 results for batch 5
+2025-10-06 16:09:36,426 - INFO - Saved layer 63 results for batch 5
+2025-10-06 16:09:36,427 - INFO - Marked batch 5 as complete
+2025-10-06 16:09:36,428 - INFO - Processing batch 7/20 (prompts 6-7)
+2025-10-06 16:09:36,428 - INFO - Saved metadata for batch 6
+2025-10-06 16:09:37,104 - INFO - Saved clean/corrupt data for batch 6
+2025-10-06 16:10:03,782 - INFO - Saved layer 0 results for batch 6
+2025-10-06 16:10:28,022 - INFO - Saved layer 1 results for batch 6
+2025-10-06 16:10:54,619 - INFO - Saved layer 2 results for batch 6
+2025-10-06 16:11:21,202 - INFO - Saved layer 3 results for batch 6
+2025-10-06 16:11:47,135 - INFO - Saved layer 4 results for batch 6
+2025-10-06 16:12:11,081 - INFO - Saved layer 5 results for batch 6
+2025-10-06 16:12:36,275 - INFO - Saved layer 6 results for batch 6
+2025-10-06 16:13:02,011 - INFO - Saved layer 7 results for batch 6
+2025-10-06 16:13:30,704 - INFO - Saved layer 8 results for batch 6
+2025-10-06 16:13:54,713 - INFO - Saved layer 9 results for batch 6
+2025-10-06 16:14:19,038 - INFO - Saved layer 10 results for batch 6
+2025-10-06 16:14:45,000 - INFO - Saved layer 11 results for batch 6
+2025-10-06 16:15:11,719 - INFO - Saved layer 12 results for batch 6
+2025-10-06 16:15:37,261 - INFO - Saved layer 13 results for batch 6
+2025-10-06 16:16:03,602 - INFO - Saved layer 14 results for batch 6
+2025-10-06 16:16:29,619 - INFO - Saved layer 15 results for batch 6
+2025-10-06 16:16:53,869 - INFO - Saved layer 16 results for batch 6
+2025-10-06 16:17:19,262 - INFO - Saved layer 17 results for batch 6
+2025-10-06 16:17:44,672 - INFO - Saved layer 18 results for batch 6
+2025-10-06 16:18:12,622 - INFO - Saved layer 19 results for batch 6
+2025-10-06 16:18:36,728 - INFO - Saved layer 20 results for batch 6
+2025-10-06 16:19:02,053 - INFO - Saved layer 21 results for batch 6
+2025-10-06 16:19:27,958 - INFO - Saved layer 22 results for batch 6
+2025-10-06 16:19:54,562 - INFO - Saved layer 23 results for batch 6
+2025-10-06 16:20:19,794 - INFO - Saved layer 24 results for batch 6
+2025-10-06 16:20:46,372 - INFO - Saved layer 25 results for batch 6
+2025-10-06 16:21:12,165 - INFO - Saved layer 26 results for batch 6
+2025-10-06 16:21:38,679 - INFO - Saved layer 27 results for batch 6
+2025-10-06 16:22:02,870 - INFO - Saved layer 28 results for batch 6
+2025-10-06 16:22:28,695 - INFO - Saved layer 29 results for batch 6
+2025-10-06 16:22:56,842 - INFO - Saved layer 30 results for batch 6
+2025-10-06 16:23:23,589 - INFO - Saved layer 31 results for batch 6
+2025-10-06 16:23:47,628 - INFO - Saved layer 32 results for batch 6
+2025-10-06 16:24:13,291 - INFO - Saved layer 33 results for batch 6
+2025-10-06 16:24:41,469 - INFO - Saved layer 34 results for batch 6
+2025-10-06 16:25:05,566 - INFO - Saved layer 35 results for batch 6
+2025-10-06 16:25:30,627 - INFO - Saved layer 36 results for batch 6
+2025-10-06 16:25:39,737 - ERROR - Fatal error: 
+
+Traceback (most recent call last):
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/backends/execution.py", line 21, in __call__
+    tracer.execute(fn)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/tracing/tracer.py", line 385, in execute
+    self.model.interleave(self.fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/modeling/mixins/meta.py", line 76, in interleave
+    return super().interleave(fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 733, in interleave
+    fn(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 384, in __call__
+    else self._module(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 730, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 463, in forward
+    layer_outputs = decoder_layer(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/modeling_layers.py", line 48, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 284, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 218, in forward
+    query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 123, in apply_rotary_pos_emb
+    q_embed = (q * cos) + (rotate_half(q) * sin)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 98, in rotate_half
+    return torch.cat((-x2, x1), dim=-1)
+
+OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 1 has a total capacity of 79.25 GiB of which 7.69 MiB is free. Including non-PyTorch memory, this process has 43.05 GiB memory in use. Process 3154735 has 36.14 GiB memory in use. Of the allocated memory 42.41 GiB is allocated by PyTorch, and 155.96 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch_chkpt.py", line 489, in <module>
+    main()
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch_chkpt.py", line 435, in main
+    batch_scores = activation_patching(
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/disk/u/gio/mechinterp/ordering/batch_act_patch_chkpt.py", line 261, in activation_patching
+    with model.trace(corrupt_prompts):
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/tracing/base.py", line 601, in __exit__
+    self.backend(self)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/backends/execution.py", line 24, in __call__
+    raise wrap_exception(e, tracer.info) from None
+nnsight.NNsightException: 
+
+Traceback (most recent call last):
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/backends/execution.py", line 21, in __call__
+    tracer.execute(fn)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/tracing/tracer.py", line 385, in execute
+    self.model.interleave(self.fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/modeling/mixins/meta.py", line 76, in interleave
+    return super().interleave(fn, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 733, in interleave
+    fn(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/envoy.py", line 384, in __call__
+    else self._module(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 730, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/utils/generic.py", line 969, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 463, in forward
+    layer_outputs = decoder_layer(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/modeling_layers.py", line 48, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 284, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/nnsight/intervention/interleaver.py", line 137, in nnsight_forward
+    return forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 218, in forward
+    query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 123, in apply_rotary_pos_emb
+    q_embed = (q * cos) + (rotate_half(q) * sin)
+  File "/disk/u/gio/.conda/envs/retrieval/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 98, in rotate_half
+    return torch.cat((-x2, x1), dim=-1)
+
+OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 1 has a total capacity of 79.25 GiB of which 7.69 MiB is free. Including non-PyTorch memory, this process has 43.05 GiB memory in use. Process 3154735 has 36.14 GiB memory in use. Of the allocated memory 42.41 GiB is allocated by PyTorch, and 155.96 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

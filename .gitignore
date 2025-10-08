@@ -48,3 +48,11 @@ hierarchy/LLM_Categorical_Hierarchical_Representations/
 
 # Other
 .vscode
+
+# Project specific
+
+## Looping
+looping/attn_cache/
+looping/avg_matrix/
+avg_matrix/
+attn_cache/

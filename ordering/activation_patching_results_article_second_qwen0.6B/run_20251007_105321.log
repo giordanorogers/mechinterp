@@ -1,0 +1,46 @@
+2025-10-07 10:53:21,287 - INFO - Loading Qwen-32B model...
+2025-10-07 10:53:32,264 - INFO - Model loaded. Config: 64 layers
+2025-10-07 10:53:32,272 - INFO - Starting batch activation patching experiment at 20251007_105321
+2025-10-07 10:53:32,272 - INFO - Output directory: activation_patching_results_article_second
+2025-10-07 10:53:32,273 - INFO - Loaded completed batch 0
+2025-10-07 10:53:32,274 - INFO - Batch 1/20 already complete, skipping
+2025-10-07 10:53:32,274 - INFO - Loaded completed batch 1
+2025-10-07 10:53:32,274 - INFO - Batch 2/20 already complete, skipping
+2025-10-07 10:53:32,274 - INFO - Loaded completed batch 2
+2025-10-07 10:53:32,274 - INFO - Batch 3/20 already complete, skipping
+2025-10-07 10:53:32,274 - INFO - Loaded completed batch 3
+2025-10-07 10:53:32,274 - INFO - Batch 4/20 already complete, skipping
+2025-10-07 10:53:32,274 - INFO - Loaded completed batch 4
+2025-10-07 10:53:32,274 - INFO - Batch 5/20 already complete, skipping
+2025-10-07 10:53:32,275 - INFO - Loaded completed batch 5
+2025-10-07 10:53:32,275 - INFO - Batch 6/20 already complete, skipping
+2025-10-07 10:53:32,275 - INFO - Loaded completed batch 6
+2025-10-07 10:53:32,275 - INFO - Batch 7/20 already complete, skipping
+2025-10-07 10:53:32,275 - INFO - Loaded completed batch 7
+2025-10-07 10:53:32,275 - INFO - Batch 8/20 already complete, skipping
+2025-10-07 10:53:32,275 - INFO - Loaded completed batch 8
+2025-10-07 10:53:32,275 - INFO - Batch 9/20 already complete, skipping
+2025-10-07 10:53:32,275 - INFO - Loaded completed batch 9
+2025-10-07 10:53:32,275 - INFO - Batch 10/20 already complete, skipping
+2025-10-07 10:53:32,275 - INFO - Loaded completed batch 10
+2025-10-07 10:53:32,276 - INFO - Batch 11/20 already complete, skipping
+2025-10-07 10:53:32,276 - INFO - Loaded completed batch 11
+2025-10-07 10:53:32,276 - INFO - Batch 12/20 already complete, skipping
+2025-10-07 10:53:32,276 - INFO - Loaded completed batch 12
+2025-10-07 10:53:32,276 - INFO - Batch 13/20 already complete, skipping
+2025-10-07 10:53:32,276 - INFO - Loaded completed batch 13
+2025-10-07 10:53:32,276 - INFO - Batch 14/20 already complete, skipping
+2025-10-07 10:53:32,276 - INFO - Loaded completed batch 14
+2025-10-07 10:53:32,276 - INFO - Batch 15/20 already complete, skipping
+2025-10-07 10:53:32,277 - INFO - Loaded completed batch 15
+2025-10-07 10:53:32,277 - INFO - Batch 16/20 already complete, skipping
+2025-10-07 10:53:32,277 - INFO - Loaded completed batch 16
+2025-10-07 10:53:32,277 - INFO - Batch 17/20 already complete, skipping
+2025-10-07 10:53:32,277 - INFO - Loaded completed batch 17
+2025-10-07 10:53:32,277 - INFO - Batch 18/20 already complete, skipping
+2025-10-07 10:53:32,277 - INFO - Loaded completed batch 18
+2025-10-07 10:53:32,277 - INFO - Batch 19/20 already complete, skipping
+2025-10-07 10:53:32,277 - INFO - Loaded completed batch 19
+2025-10-07 10:53:32,277 - INFO - Batch 20/20 already complete, skipping
+2025-10-07 10:53:32,286 - INFO - Saved final results to activation_patching_results_article_second/20251007_105321_final_results.npy
+2025-10-07 10:53:32,526 - INFO - Experiment complete!

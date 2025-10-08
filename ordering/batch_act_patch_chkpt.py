@@ -9,7 +9,7 @@ import pickle
 import json
 
 # Create output directory
-OUTPUT_DIR = Path("activation_patching_results")
+OUTPUT_DIR = Path("activation_patching_results_article_second")
 OUTPUT_DIR.mkdir(exist_ok=True)
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
@@ -27,42 +27,39 @@ logger = logging.getLogger(__name__)
 
 # Model setup
 logger.info("Loading Qwen-32B model...")
-model = LanguageModel("Qwen/Qwen3-0.6B", device_map="auto")
+model = LanguageModel("Qwen/Qwen3-32B", device_map="auto")
 logger.info(f"Model loaded. Config: {model.config.num_hidden_layers} layers")
 
-ARTICLE_FIRST = [
-    ['An artist Jane paints', 'The artist Jane paints'],
-    ['The pet fish swims', 'A pet fish swims'],
-    ['An animal fish swims', 'The animal fish swims'],
-    ['A friend Tom visits', 'The friend Tom visits'],
-    ['The woman Mary cooks', 'A woman Mary cooks'],
-    ['A machine needs fuel', 'The machine needs fuel'],
-    ['A toy is fun', 'The toy is fun'],
-    ['A plant loves sun', 'The plant loves sun'],
-    ['The dog is loud', 'A dog is loud'],
-    ['A breeze blows softly', 'The breeze blows softly'],
-    ['The mouse runs away', 'A mouse runs away'],
-    ['A child plays happily', 'The child plays happily'],
-    ['A clock ticks slowly', 'The clock ticks slowly'],
-    ['A book smells fresh', 'The book smells fresh'],
-    ['The library is peaceful', 'A library is peaceful'],
-    ['A street sounds noisy', 'The street sounds noisy'],
-    ['The train arrives soon', 'A train arrives soon'],
-    ['A knife cuts easily', 'The knife cuts easily'],
-    ['A flower smells sweet', 'The flower smells sweet'],
-    ['A wire bends easily', 'The wire bends easily'],
+ARTICLE_SECOND = [
+    ['Jack the boy runs', 'Jack a boy runs'],
+    ['Jack a student learns', 'Jack the student learns'],
+    ['Jack an actor plays', 'Jack the actor plays'],
+    ['Jane the girl sings', 'Jane a girl sings'],
+    ['Eat the pizza now', 'Eat a pizza now'],
+    ['Jane an artist paints', 'Jane the artist paints'],
+    ['Fish the pet swim', 'Fish a pet swims'],
+    ['What the day brings', 'What a day brings'],
+    ['Fish an animal swims', 'Fish the animal swims'],
+    ['Tom the man works', 'Tom a man works'],
+    ['Tom a friend visits', 'Tom the friend visits'],
+    ['Tom an employee arrives', 'Tom the employee arrives'],
+    ['Kate the woman cooks', 'Kate a woman cooks'],
+    ['Kate a nurse cares', 'Kate the nurse cares'],
+    ['Kate an author writes', 'Kate the author writes'],
+    ['Cars the fast vehicle', 'Cars a fast vehicle'],
+    ['Bob a scientist studies', 'Bob the scientist studies'],
+    ['Cause a societal shift', 'Cause the societal shift'],
+    ['See the root grow', 'See a root grow'],
+    ['Trees a big plant', 'Trees the big plant']
 ]
 
 PROMPT_TEMPLATE = """A ball rolls by. Q: What is the second word in the previous sentence? A: ball
 Pizza is the best. Q: What is the first word in the previous sentence? A: Pizza
-{}. Q: What is the first word in the previous sentence? A:"""
+{}. Q: What is the second word in the previous sentence? A:"""
 
 FEW_SHOT_EXAMPLES = """A ball rolls by. Q: What is the second word in the previous sentence? A: ball
 Pizza is the best. Q: What is the first word in the previous sentence? A: Pizza\n"""
 FSE_TOKENS = [tok.replace("Ġ", " ").replace("Ċ", "\n") for tok in model.tokenizer.tokenize(FEW_SHOT_EXAMPLES)]
-
-QUESTION = "Q: What is the first word in the previous sentence? Answer in one word only!"
-QUESTION_TOKENS = [tok.replace("Ġ", " ").replace("Ċ", "\n") for tok in model.tokenizer.tokenize(QUESTION)]
 
 def get_checkpoint_dir(batch_idx):
     """Get checkpoint directory for a specific batch"""
@@ -305,7 +302,7 @@ def visualize_patching(
     clean_tokens = [model.tokenizer.decode([token_id]) for token_id in clean_input_ids]
 
     # Create token labels
-    tokens = ["few_shot_examples", "article", "sentence_tok_1", "sentence_tok_2", "sentence_tok_3",]
+    tokens = ["few_shot_examples", "sentence_tok_1", "article", "sentence_tok_3", "sentence_tok_4",]
     for idx, clean_tok in enumerate(clean_tokens):
         if idx < (len(FSE_TOKENS) + 4):
             continue
@@ -337,7 +334,7 @@ def visualize_patching(
         ax.set_xticks(tick_indices + 0.5)
         ax.set_xticklabels(tick_indices)
         
-        ax.set_title("Indirect Effects of Residual Layers (Averaged over 20 prompts)")
+        ax.set_title("Indirect Effects of Residuals (Article Second)")
         ax.set_xlabel("Layer")
         
         color_scale = plt.colorbar(heatmap)
@@ -346,14 +343,14 @@ def visualize_patching(
         plt.tight_layout()
         
         # Save the figure
-        plt.savefig(OUTPUT_DIR / f'{timestamp}_indirect_effects_heatmap_article_first.png', 
+        plt.savefig(OUTPUT_DIR / f'{timestamp}_indirect_effects_heatmap_article_second.png', 
                    dpi=300, bbox_inches='tight')
 
 def main():
     logger.info(f"Starting batch activation patching experiment at {timestamp}")
     logger.info(f"Output directory: {OUTPUT_DIR}")
 
-    dataset = ARTICLE_FIRST
+    dataset = ARTICLE_SECOND
     batch_size = 1
 
     # Prepare all prompts and target tokens
@@ -363,10 +360,10 @@ def main():
     clean_prompts = [PROMPT_TEMPLATE.format(sent) for sent in clean_sentences]
     corrupt_prompts = [PROMPT_TEMPLATE.format(sent) for sent in corrupt_sentences]
 
-    # Extract target tokens (first word of each sentence, which is the article)
-    clean_targets = [model.tokenizer.encode(sent.split()[0], add_special_tokens=False)[0]
+    # Extract target tokens (second word of each sentence, which is the article)
+    clean_targets = [model.tokenizer.encode(sent.split()[1], add_special_tokens=False)[0]
                      for sent in clean_sentences]
-    corrupt_targets = [model.tokenizer.encode(sent.split()[0], add_special_tokens=False)[0]
+    corrupt_targets = [model.tokenizer.encode(sent.split()[1], add_special_tokens=False)[0]
                        for sent in corrupt_sentences]
     
     # Get token length (should be the same for all)
